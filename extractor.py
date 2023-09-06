@@ -2,161 +2,147 @@
 #Posicion de la ventana al inciar:
 
 
-import pyautogui as pa
-import cv2
-import numpy as np
-import json
+
 import time
-import pytesseract
-from PIL import Image
+import os
+import pandas as pd
+import pyperclip as pc
 
+from classes.jugador import jugador
 
-class coords:
-    __cords= (0,0)
-    def __init__(self, x=(0,0)) -> None:
-        self.__cords = x
-
-    def set_coords(self, x):
-        self.__cords=x
-
-    def __eq__(self, __value: object) -> bool:
-        return ((self.width == __value.width) and (self.height == __value.height)) 
-
-    def __str__(self) ->str:
-        return str(self.__cords)
-     
-    @property
-    def width (self) -> float:
-        return self.__cords[0]
-    @property
-    def height (self) -> float:
-        return self.__cords[1]
-    @property
-    def center (self) -> tuple:
-        return self.width/2, self.height/2
-
-        
-##ICONOS DE REFERENCIA
-img_icon_profile_pic = 'images/icon_profile_pic.png'
-img_icon_clasificaciones = 'images/icon_clasificaciones.png'
-img_icon_clasificaciones_poder='images/icon_clasificaciones_poder.png'
-
-img_icon_masinfo = 'images/icon_masinformacion.png'
-img_icon_infokp = 'images/icon_infokp.png'
-img_icon_cerrar_perfil = 'images/icon_cerrar_perfil.png'
-
-#CAPTURAS DE EJEMPLO
-img_profile_detail = 'images/profile_detail.png'
-img_profile_detail_kp = 'images/profile_detail_kp.png'
-img_kp_stats = 'images/kp_stats.png'
-
-#DATOS CONFIG
-espacio_entre_perfiles = 100
-
-tesseract_path="C:\Program Files\Tesseract-OCR"
-pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-
+from datetime import datetime
+from classes.cfg import *
+from classes.utils import coords
 
 ###ENCUENTRA EL ICONO DE PERFIL DE LA VENTANA PARA REFERENCIAR PUNTOS
 
-time.sleep(1)
-
-def locate_image(img)->coords:
-    zero = pa.locateOnScreen(img,confidence=0.9)
-    print (zero)
-    if (zero is None):
-        print (zero)
-        return coords()
-    else:
-        #Se mueve a la zona detectada
-        print ('mueve')
-        pa.moveTo(zero.left + zero.width/2, zero.top + zero.height/2,duration=3)
-        print ('fin mueve')
-        #Entra en el icono
-        time.sleep(0.5)
-        pa.mouseDown()
-        time.sleep(0.1)
-        pa.mouseUp()
-        time.sleep(0.6)
-        return coords((zero.left,zero.top))
-
-
-def busca_dato (texto:str,str_inicio:str,str_final:str)->str:
-    inicio = texto.find(str_inicio)
-    final = texto.find(str_final)
-    return texto[inicio + len(str_inicio):final].strip().replace(' ','')
-
-def parse_profile(profile:Image, profile_kp:Image)->json:
-    texto_profile = pytesseract.image_to_string(Image.open(profile))
-    texto_profile_kp = pytesseract.image_to_string(Image.open(profile_kp))
-    print (texto_profile_kp)
-    result = {
-        "Nombre":busca_dato(texto_profile,'','Poder'),
-        "Poder": busca_dato(texto_profile,'Poder:', 'Pu'),
-        "PoderMasAlto": busca_dato(texto_profile,'Alto',"V"),
-        "Muertes": busca_dato(texto_profile,'Muerto','Mom'),
-        "T4Kills": 0,
-        "T5Kills": 0
-    }
-    return json.dumps(result)    
+time.sleep(5)
 
 def testing():
-    print (locate_image(img_icon_clasificaciones_poder))
+    #Nuevo jugador
+    global j
+    j = jugador()
+    
+    locate_image(img_icon_clasificaciones_poder)
     #Se posiciona en el primero de la lista
-    pa.moveRel(0,-230,4)
-    time.sleep(1.2)
+    pa.moveRel(0,-230,1.5)
     #Almacena posicion incial
     pos_ini = pa.position()
     
-    #Recorre los 6 perfiles de la pagina
-    for x in range(1,6):
-        #Click en el perfil
-        pa.click()
-        time.sleep(0.4)
-        
-        #Navega a Mas información
-        print (locate_image(img_icon_masinfo))
-        
-        #captura de pantalla
-        #pa.screenshot()
-        
-        #Navega a Detalles KP
-        print (locate_image(img_icon_infokp))
-        
-        #captura de pantalla
-        #pa.screenshot()
+    #Crea el directorio para los screenshots 
+    #Formato ddMMYY_HHMMSS
+    dt_string = datetime.now().strftime("%Y%m%d_%H%M%S")
+    actual_screenshot_path = os.path.join(conf_screenshots_path,dt_string)
+    
+    print ("Preparabdo carpeta para screenshots")
+    crearCarpeta(actual_screenshot_path)
 
-        #Navega a Cerrar
-        print (locate_image(img_icon_cerrar_perfil))
-        time.sleep(2)
-        #Navega a Cerrar
-        print (locate_image(img_icon_cerrar_perfil))
+    print ("Procesando jugadores....")
+    #Recorre los 6 perfiles de la pagina
+    for x in range(conf_scan_ini,conf_scan_fin):
+        print ("Procesando Jugador Numero: " + str(x))
+        #Click en el perfil
+        click()
+
+        #Captura Perfil
+        dt_string = datetime.now().strftime("%Y%m%d_%H%M%S")
+        img_name = actual_screenshot_path + "\\" + str(x) + "_0_Perfil_"+dt_string + ".png"
+        
+        #Captura para parsear datos id
+        global tmp_image_id
+        tmp_image_id = ImageGrab.grab(bbox=region_id)
+        
+        #Captura para parsear datos Nombre
+        global tmp_image_nombre
+        tmp_image_nombre = ImageGrab.grab(bbox=region_nombre)
+
+        #Captura para parsear datos Alianza
+        global tmp_image_alianza
+        tmp_image_alianza = ImageGrab.grab(bbox=region_alianza)
+
+
+        print ("Capturando perfil #" + str(x))
+        screenshot(img_name)
+        
+        print ("Navega Mas info")
+        #Navega a Mas información
+        locate_image(img_icon_masinfo)
+        
+        #captura de pantalla Mas info
+        dt_string = datetime.now().strftime("%Y%m%d_%H%M%S")
+        img_name = actual_screenshot_path + "\\" + str(x) +"_1_Mas_Info_"+dt_string + ".png"
+        print ("Capturando perfil #" + str(x))
+        screenshot(img_name)
+
+        print ("Clipboard Name: " + pc.paste())
+
+        #Captura Poder Actual
+        global tmp_image_poderactual
+        tmp_image_poderactual = ImageGrab.grab(bbox=region_poderactual)
+
+        #Captura de Poder Mas Alto
+        global tmp_image_podermasalto
+        tmp_image_podermasalto = ImageGrab.grab(bbox=region_poder_mas_alto)
+        
+        #Captura de Muertos
+        global tmp_image_muertos
+        tmp_image_muertos = ImageGrab.grab(bbox=region_muerto)
+
+        #Busca el icono de copiar el nombre
+        locate_image(img_icon_copy_name)
+        j.nombre=pc.paste()
+
+
+        #Navega a Detalles KP
+        print ("Navega detalles kp")
+        locate_image(img_icon_infokp)
+        
+        #captura de pantalla
+        dt_string = datetime.now().strftime("%Y%m%d_%H%M%S")
+        img_name= actual_screenshot_path +  "\\" + str(x)  + "_2_Mas_Info_KP_"+ dt_string + ".png"
+        print ("Capturando Detalles KP #" + str(x))
+        screenshot(img_name)
+
+        #Captura de t4kills
+        global tmp_image_t4kills
+        tmp_image_t4kills = ImageGrab.grab(bbox=region_t4kills)
+
+        #Captura de t5kills
+        global tmp_image_t5kills
+        tmp_image_t5kills = ImageGrab.grab(bbox=region_t5kills)
+        
+
+        #Procesa los datos obtenidos
+        print ("Parsea datos obtenidos")
+        print (parse_profile())
+
+
+        if (identify_screen(img_screen_mas_informacion)):
+            #Navega a Cerrar
+            print ("Navega a cerrar detalles perfil")
+            locate_image(img_icon_cerrar_perfil)
+        else:
+            print ("Cerrar detalles perfil no encontrado")
+
+        if (identify_screen(img_screen_perfil_gob)):
+            #Navega a Cerrar
+            print ("Navega a cerrar perfil gobernador")
+            locate_image(img_icon_cerrar_perfil)
+        else:
+            print ("Cerrar perfil gobernador no encontrado")
 
         #Mueve al siguiente
-        pa.moveTo(pos_ini.x, pos_ini.y + espacio_entre_perfiles * x,5)
-        time.sleep(1.2 + 0.1*x)     
-        
-    
+        if (identify_screen(img_screen_clasificacion_poder)):
+            if (x < 4):
+                print ("Moviendo al siguiente jugador < 4")
+                pa.moveTo(pos_ini.x, pos_ini.y + espacio_entre_perfiles * x,5)
+                posicion =pa.position()
+            else:
+                print ("Moviendo al siguiente jugador >4")
+                pa.moveTo(posicion, duration=3)
+        else:
+            print ("Err: No está en la ventana de clasificaciones")
+            exit(-1) 
 
-"""     time.sleep(1.2)
-    pa.click()
-    time.sleep(0.2)
-    print (locate_image(img_icon_masinfo))
-    time.sleep(0.45)
-    pa.click()
-    time.sleep(1.2)
-    print (locate_image(img_icon_infokp))
-    time.sleep(0.88)
-    pa.click() """
-
+#
 testing()
-
-#result = locate_image(img_profile_pic)
-#result = locate_image(img_clasificaciones)
-#result = locate_image(img_clasificaciones_poder)
-
-#resultado =  (parse_profile(img_profile_detail,img_profile_detail_kp))
-#texto_profile_kp = pytesseract.image_to_string(Image.open(img_kp_stats))
-#print (texto_profile_kp)
-#print (resultado)
-

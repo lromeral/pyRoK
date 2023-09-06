@@ -1,0 +1,45 @@
+##REGIONES DE ESCANEO DE DATOS en formato tupla bbox
+##(left_x, top_y, right_x, bottom_y)
+#REGIONES DE BUSQUEDA 
+regions:
+  id: (1079,281,1200,310)
+  nombre: (925,310,1200,345)
+  alianza: (920,410,1170,440)
+  #poderactual = (1190,415,1400,440)
+  poderactual: (1130,225,1260,250)
+  poder_mas_alto: (1400,345,1621,375)
+  muerto: (1400,530,1621,555),
+  t4kills: (1143,485,1300,510)
+  t5kills: (1143,530,1300,555)
+
+
+#PATHS
+paths:
+  base: './'
+  image: 'images/'
+  patterns: 'patters/'
+  screenshots: 'screenshots/'
+  csv: 'csv/'
+
+
+resolucion:
+  width: 1600
+  height: 900
+
+
+
+##PATRONES DE REFERENCIA
+patterns:
+  profile_pic: 'icon_profile_pic.png'
+  clasificaciones: 'icon_clasificaciones.png'
+  clasificaciones_poder: 'icon_clasificaciones_poder.png'
+  masinfo: 'icon_masinformacion.png'
+  infokp: 'icon_infokp.png'
+  cerrar_perfil: 'icon_cerrar_perfil.png'
+  copy_name: 'icon_copy_name.png'
+
+#PANTALLAS
+screens:
+  perfil_gob: 'pantalla_perfil_gobernador.png'
+  mas_informacion: 'pantalla_mas_informacion.png'
+  clasificacion_poder: 'pantalla_clasificacion_poder.png'
