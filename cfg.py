@@ -2,17 +2,36 @@
 ##(left_x, top_y, right_x, bottom_y)
 #REGIONES DE BUSQUEDA 
 regions = dict(
-    id ='(1079,281,1200,310)',
-    name='(925,310,1200,345)',
+    id =(1070,270,1220,310),
+    name=(925,310,1200,345),
     alliance=(920,400,1200,450),
-    #poderactual = (1190,415,1400,440),
-    power='(1130,225,1260,250)',
-    powerH='(1400,345,1621,375)',
-    deaths='(1400,530,1621,555)',
-    t4kills='(1143,485,1300,510)',
-    t5kills='(1143,530,1300,555)',
-    screenshots='(320,1600,80,900)'
+    power = (1190,415,1400,440),
+    #power=(1130,225,1260,250),
+    powerH=(1400,345,1621,375),
+    kp_more_info=(1600,220,1730,250),
+    kp_profile = (1435,415,1680,440),
+    deaths=(1400,530,1621,555),
+    assist_rss =(1400,760,1620,790),
+    t4kills=(1135,480,1300,515),
+    t5kills=(1135,530,1300,555),
+    screenshots=(320,1600,80,900)
 )
+
+csv_header = [
+    'ID',
+    'POSITION',
+    'NAME',
+    'ALLIANCE',
+    'POWER',
+    'HIGHEST_POWER',
+    'KP',
+    'DEATHS',
+    'RSS_ASSIST',
+    'T4_KILLS',
+    'T5_KILLS',
+    'TIMESTAMP'
+]
+
 
 posiciones = dict(
     info_kp = (1440,393),
@@ -20,8 +39,8 @@ posiciones = dict(
     cerrar_mas_info = (1715, 135),
     cerrar_perfil =(1685,185),
     kills = (1400, 236),
-    copy_name =(700,235),
-    copy_name2 = (1060,330)
+    copy_name_mas_info =(710,235),
+    copy_name_profile = (1060,330)
 )
 base_path='./'
 
