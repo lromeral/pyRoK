@@ -1,0 +1,250 @@
+2023-09-08 22:42:29,581~DEBUG~main~module:main~function:main
+2023-09-08 22:42:29,581~INFO~Procesando jugadores desde 0 hasta 300~module:main~function:main
+2023-09-08 22:42:29,582~DEBUG~procesa_jugador~module:main~function:main
+2023-09-08 22:42:29,582~DEBUG~Procesando jugador #1~module:main~function:main
+2023-09-08 22:42:29,582~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:42:30,084~INFO~Identificando pantalla: ./images/pantalla_clasificacion_poder.png~module:utils~function:utils
+2023-09-08 22:42:30,308~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:45:50,170~DEBUG~main~module:main~function:main
+2023-09-08 22:45:50,170~INFO~Procesando jugadores desde 0 hasta 300~module:main~function:main
+2023-09-08 22:45:50,171~DEBUG~procesa_jugador~module:main~function:main
+2023-09-08 22:45:50,171~DEBUG~Procesando jugador #1~module:main~function:main
+2023-09-08 22:45:50,171~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:45:50,673~INFO~Identificando pantalla: ./images/pantalla_clasificacion_poder.png~module:utils~function:utils
+2023-09-08 22:45:51,043~WARNING~Warn: Imagen no encontrada. Reintentando #0~module:utils~function:utils
+2023-09-08 22:45:52,221~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:50:31,999~DEBUG~main~module:main~function:main
+2023-09-08 22:50:32,000~INFO~Procesando jugadores desde 0 hasta 300~module:main~function:main
+2023-09-08 22:50:32,000~DEBUG~procesa_jugador~module:main~function:main
+2023-09-08 22:50:32,000~DEBUG~Procesando jugador #1~module:main~function:main
+2023-09-08 22:50:32,001~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:50:32,502~INFO~Identificando pantalla: ./images/pantalla_clasificacion_poder.png~module:utils~function:utils
+2023-09-08 22:50:32,711~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:50:33,369~DEBUG~click~module:utils~function:utils
+2023-09-08 22:50:33,675~DEBUG~captura_profile~module:main~function:main
+2023-09-08 22:50:33,675~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:50:34,177~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:50:34,386~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:50:34,386~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:50:34,386~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:50:34,430~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:01,263~DEBUG~main~module:main~function:main
+2023-09-08 22:52:01,263~INFO~Procesando jugadores desde 0 hasta 300~module:main~function:main
+2023-09-08 22:52:01,264~DEBUG~procesa_jugador~module:main~function:main
+2023-09-08 22:52:01,264~DEBUG~Procesando jugador #1~module:main~function:main
+2023-09-08 22:52:01,264~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:01,766~INFO~Identificando pantalla: ./images/pantalla_clasificacion_poder.png~module:utils~function:utils
+2023-09-08 22:52:01,988~WARNING~Warn: Imagen no encontrada. Reintentando #0~module:utils~function:utils
+2023-09-08 22:52:03,178~WARNING~Warn: Imagen no encontrada. Reintentando #1~module:utils~function:utils
+2023-09-08 22:52:04,344~WARNING~Warn: Imagen no encontrada. Reintentando #2~module:utils~function:utils
+2023-09-08 22:52:05,547~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:06,204~DEBUG~click~module:utils~function:utils
+2023-09-08 22:52:06,509~DEBUG~captura_profile~module:main~function:main
+2023-09-08 22:52:06,509~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:07,010~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:52:07,284~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:07,284~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:07,285~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:07,327~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:35,255~DEBUG~main~module:main~function:main
+2023-09-08 22:52:35,271~INFO~Procesando jugadores desde 0 hasta 300~module:main~function:main
+2023-09-08 22:52:35,282~DEBUG~procesa_jugador~module:main~function:main
+2023-09-08 22:52:35,283~DEBUG~Procesando jugador #1~module:main~function:main
+2023-09-08 22:52:35,284~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:35,796~INFO~Identificando pantalla: ./images/pantalla_clasificacion_poder.png~module:utils~function:utils
+2023-09-08 22:52:36,005~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:36,662~DEBUG~click~module:utils~function:utils
+2023-09-08 22:52:36,968~DEBUG~captura_profile~module:main~function:main
+2023-09-08 22:52:36,968~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:37,469~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:52:37,700~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:37,701~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:37,701~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:37,761~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:38,341~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:38,341~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:38,389~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:38,638~DEBUG~get_dato_alfanumerico~module:main~function:main
+2023-09-08 22:52:38,639~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:38,681~DEBUG~datos_alfanumericos~module:main~function:main
+2023-09-08 22:52:38,971~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:38,971~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:39,010~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:39,249~DEBUG~accede_mas_info~module:main~function:main
+2023-09-08 22:52:39,249~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:39,750~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:52:39,944~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:40,046~DEBUG~click~module:utils~function:utils
+2023-09-08 22:52:40,349~DEBUG~captura_info~module:main~function:main
+2023-09-08 22:52:40,349~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:40,850~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:52:41,042~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:41,042~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:41,044~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:41,082~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:41,352~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:41,352~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:41,396~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:41,676~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:41,676~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:41,720~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:41,972~DEBUG~Accediendo estasticas de asesinato~module:main~function:main
+2023-09-08 22:52:41,972~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:42,473~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:52:42,668~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:43,324~DEBUG~click~module:utils~function:utils
+2023-09-08 22:52:43,627~DEBUG~captura_estadisticas_asesinato~module:main~function:main
+2023-09-08 22:52:43,627~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:43,627~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:43,674~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:43,922~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:52:43,924~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:52:43,973~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:52:44,205~DEBUG~copiar_nombre_mas_info~module:main~function:main
+2023-09-08 22:52:44,206~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:44,707~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:52:44,888~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:45,241~DEBUG~click~module:utils~function:utils
+2023-09-08 22:52:45,544~DEBUG~cerrar_mas_info~module:main~function:main
+2023-09-08 22:52:45,544~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:46,044~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:52:46,238~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:46,591~DEBUG~click~module:utils~function:utils
+2023-09-08 22:52:46,894~DEBUG~Pega el nombre~module:main~function:main
+2023-09-08 22:52:46,897~DEBUG~cerrar_perfil~module:main~function:main
+2023-09-08 22:52:46,897~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:52:47,398~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:52:47,615~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:52:48,079~DEBUG~click~module:utils~function:utils
+2023-09-08 22:53:51,600~DEBUG~main~module:main~function:main
+2023-09-08 22:53:51,600~INFO~Procesando jugadores desde 0 hasta 300~module:main~function:main
+2023-09-08 22:53:51,600~DEBUG~procesa_jugador~module:main~function:main
+2023-09-08 22:53:51,601~DEBUG~Procesando jugador #1~module:main~function:main
+2023-09-08 22:53:51,601~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:53:52,102~INFO~Identificando pantalla: ./images/pantalla_clasificacion_poder.png~module:utils~function:utils
+2023-09-08 22:53:52,347~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:53:53,004~DEBUG~click~module:utils~function:utils
+2023-09-08 22:53:53,309~DEBUG~captura_profile~module:main~function:main
+2023-09-08 22:53:53,309~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:53:53,810~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:53:54,027~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:53:54,028~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:53:54,028~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:53:54,080~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:53:54,389~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:53:54,389~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:53:54,439~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:53:54,735~DEBUG~get_dato_alfanumerico~module:main~function:main
+2023-09-08 22:53:54,735~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:53:54,777~DEBUG~datos_alfanumericos~module:main~function:main
+2023-09-08 22:53:55,118~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:53:55,119~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:53:55,168~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:53:55,484~DEBUG~accede_mas_info~module:main~function:main
+2023-09-08 22:53:55,485~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:53:55,986~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:53:56,232~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:53:56,334~DEBUG~click~module:utils~function:utils
+2023-09-08 22:53:56,643~DEBUG~captura_info~module:main~function:main
+2023-09-08 22:53:56,643~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:53:57,144~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:53:57,351~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:53:57,351~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:53:57,352~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:53:57,397~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:53:57,674~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:53:57,675~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:53:57,725~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:53:58,020~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:53:58,021~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:53:58,062~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:53:58,333~DEBUG~Accediendo estasticas de asesinato~module:main~function:main
+2023-09-08 22:53:58,333~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:53:58,834~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:53:59,041~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:53:59,698~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:00,001~DEBUG~captura_estadisticas_asesinato~module:main~function:main
+2023-09-08 22:54:00,002~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:00,003~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:00,063~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:00,409~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:00,409~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:00,452~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:00,713~DEBUG~copiar_nombre_mas_info~module:main~function:main
+2023-09-08 22:54:00,713~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:01,214~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:54:01,467~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:01,821~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:02,125~DEBUG~cerrar_mas_info~module:main~function:main
+2023-09-08 22:54:02,125~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:02,627~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:54:02,823~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:03,177~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:03,480~DEBUG~Pega el nombre~module:main~function:main
+2023-09-08 22:54:03,481~DEBUG~cerrar_perfil~module:main~function:main
+2023-09-08 22:54:03,481~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:03,983~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:54:04,189~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:04,654~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:04,957~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-08 22:54:04,957~INFO~Creando fichero csv~module:utils~function:utils
+2023-09-08 22:54:04,960~DEBUG~procesa_jugador~module:main~function:main
+2023-09-08 22:54:04,961~DEBUG~Procesando jugador #2~module:main~function:main
+2023-09-08 22:54:04,961~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:05,463~INFO~Identificando pantalla: ./images/pantalla_clasificacion_poder.png~module:utils~function:utils
+2023-09-08 22:54:05,675~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:06,333~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:06,635~DEBUG~captura_profile~module:main~function:main
+2023-09-08 22:54:06,635~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:07,136~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:54:07,348~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:07,348~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:07,349~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:07,396~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:07,680~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:07,680~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:07,724~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:08,014~DEBUG~get_dato_alfanumerico~module:main~function:main
+2023-09-08 22:54:08,014~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:08,057~DEBUG~datos_alfanumericos~module:main~function:main
+2023-09-08 22:54:08,360~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:08,360~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:08,408~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:08,726~DEBUG~accede_mas_info~module:main~function:main
+2023-09-08 22:54:08,726~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:09,228~INFO~Identificando pantalla: ./images/pantalla_perfil_gobernador.png~module:utils~function:utils
+2023-09-08 22:54:09,442~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:09,544~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:09,847~DEBUG~captura_info~module:main~function:main
+2023-09-08 22:54:09,847~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:10,347~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:54:10,563~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:10,563~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:10,564~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:10,624~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:10,926~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:10,926~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:10,970~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:11,240~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:11,240~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:11,284~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:11,574~DEBUG~Accediendo estasticas de asesinato~module:main~function:main
+2023-09-08 22:54:11,575~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:12,075~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:54:12,270~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:12,926~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:13,228~DEBUG~captura_estadisticas_asesinato~module:main~function:main
+2023-09-08 22:54:13,228~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:13,228~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:13,271~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:13,532~DEBUG~get_dato_numerico~module:main~function:main
+2023-09-08 22:54:13,532~DEBUG~capturar_region~module:utils~function:utils
+2023-09-08 22:54:13,578~DEBUG~datos_numericos~module:main~function:main
+2023-09-08 22:54:13,840~DEBUG~copiar_nombre_mas_info~module:main~function:main
+2023-09-08 22:54:13,840~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:14,342~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
+2023-09-08 22:54:14,573~INFO~Imagen encontrada~module:utils~function:utils
+2023-09-08 22:54:14,935~DEBUG~click~module:utils~function:utils
+2023-09-08 22:54:15,242~DEBUG~cerrar_mas_info~module:main~function:main
+2023-09-08 22:54:15,242~DEBUG~identify_screen~module:utils~function:utils
+2023-09-08 22:54:15,744~INFO~Identificando pantalla: ./images/pantalla_mas_informacion.png~module:utils~function:utils
