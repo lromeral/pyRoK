@@ -1,6 +1,8 @@
 from datetime import datetime
 class jugador():
-    def __init__(self, id:int=-1, 
+    def __init__(self, 
+                 kd:int=0,
+                 id:int=-1, 
                  pos:int=-1,
                  nombre:str='#Error#', 
                  alianza:str='#Error#', 
@@ -11,7 +13,8 @@ class jugador():
                  assist_rss:int=-1, 
                  t4kills:int=-1, 
                  t5kills:int=-1,
-                 timestamp: float= datetime.timestamp(datetime.now())) -> None:        
+                 timestamp: float= datetime.timestamp(datetime.now())) -> None:
+        self.__kd = kd        
         self.__id = id
         self.__pos = pos
         self.__nombre = nombre
@@ -53,6 +56,9 @@ class jugador():
     def id (self)->int:
         return self.__id
     @property
+    def kd (self)->int:
+        return self.__kd
+    @property
     def pos (self)->int:
         return self.__pos
     @property
@@ -89,6 +95,9 @@ class jugador():
     @id.setter
     def id (self, a:int)->None:
         self.__id = a
+    @kd.setter
+    def kd (self, a:int)->None:
+        self.__kd = a
     @pos.setter
     def pos(self,a:int)->None:
         self.__pos = a
@@ -138,4 +147,13 @@ class jugador():
             self.t5kills,
             self.timestamp
         ]
-    
+    def setInactivo(self)->None:
+        self.nombre ="Inactive Player"
+        self.alianza ="Inactive Player"
+        self.poderactual = 0
+        self.podermasalto = 0
+        self.kp = 0
+        self.muertos = 0
+        self.assist_rss = 0
+        self.t4kills = 0
+        self.t5kills = 0
