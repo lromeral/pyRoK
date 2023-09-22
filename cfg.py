@@ -1,9 +1,5 @@
-from typing_extensions import TypeAlias
-
-#left_x, top_y, right_x, bottom_y
-_region: TypeAlias = tuple[int, int, int, int]
-_point: TypeAlias = tuple[int,int]
-
+from tipos import _region, _point
+from pantalla import pantalla
 class location():
     def __init__(self, region:_region, title:str|None=None) -> None:
         self.region = region
@@ -30,11 +26,15 @@ TESSERACT = dict(
 TITLE_WINDOW_GOV_PROFILE = "PERFIL DEL GOBERNADOR"
 TITLE_WINDOW_MORE_INFO = "MAS INFORMACION"
 TITLE_WINDOW_POWER_STANDINGS = "CLASIFICACION DE PODER INDIVIDUAL"
+TITLE_WINDOW_CONFIGURACION ="CONFIGURACION"
+TITLE_WINDOW_PERSONAJES = "PERSONAJES"
 
 #WINDOWS
 REGION_WINDOW_GOV_PROFILE = _region((860,165,1380,235))
 REGION_WINDOW_MORE_INFO = _region((740,125,1480,165))
 REGION_WINDOW_POWER_STANDINGS = _region ((740,125,1480,165))
+REGION_WINDOW_CONFIGURACION =_region((0,0,0,0))
+REGION_WINDOW_PERSONAJES = _region((0,0,0,0))
 
 
 #WHERE IS THE DATA TO COLLECT
@@ -56,6 +56,20 @@ CLICK_CLOSE_MORE_INFO = _point((1715, 135))
 CLICK_CLOSE_GOV_PROFILE = _point((1685,185))
 CLICK_KILLS_STATS = _point((1400, 236))
 CLICK_COPY_NAME = _point((710,235))
+
+#PUNTOS PANTALLAS PANTALLAS
+POINT_PANTALLA_INICIO =_point((0,0))
+POINT_PANTALLA_MAS_INFO =_point((0,0))
+POINT_PANTALLA_PERFIL_GOBERNADOR = _point((0,0))
+POINT_PANTALLA_CONFIGURACION = _point((0,0))
+POINT_PANTALLA_PERSONAJES = _point((0,0))
+#
+pantalla_inicio = pantalla(c.POINT_PANTALLA_INICIO,None,None)
+pantalla_perfil_gobernador = pantalla(c.POINT_PANTALLA_PERFIL_GOBERNADOR,c.REGION_WINDOW_GOV_PROFILE,c.TITLE_WINDOW_GOV_PROFILE)
+pantalla_mas_info = pantalla(c.POINT_PANTALLA_MAS_INFO,c.REGION_WINDOW_MORE_INFO,c.TITLE_WINDOW_MORE_INFO)
+pantalla_configuracion = pantalla(c.POINT_PANTALLA_CONFIGURACION,c.REGION_WINDOW_CONFIGURACION,c.TITLE_WINDOW_CONFIGURACION)
+pantalla_personajes = pantalla(c.POINT_PANTALLA_PERSONAJES,c.REGION_WINDOW_PERSONAJES,c.TITLE_WINDOW_PERSONAJES)
+
 
 #(0,+100)
 STANDING_POS = list([
