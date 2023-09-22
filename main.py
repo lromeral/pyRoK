@@ -8,7 +8,7 @@ if __name__=='__main__':
     kd = input("Nombre del Reino: ")
     i = int (input("Inicio: "))
     f = int(input('Final: ')) +1
-    time.sleep(3)
+    time.sleep(5)
     m = scan(kdname=kd, inicio=i ,final=f)
     comienzo = datetime.utcnow()
     m.logger.info (comienzo)
