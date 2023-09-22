@@ -10,7 +10,7 @@ class jugador():
                  podermasalto:int=-1, 
                  kp:int=-1,
                  muertos:int=-1,
-                 assist_rss:int=-1, 
+                 rss_assist:int=-1, 
                  t4kills:int=-1, 
                  t5kills:int=-1,
                  timestamp: float= datetime.timestamp(datetime.now())) -> None:
@@ -23,7 +23,7 @@ class jugador():
         self.__podermasalto = podermasalto
         self.__kp = kp
         self.__muertos = muertos
-        self.__assist_rss = assist_rss
+        self.__rss_assist = rss_assist
         self.__t4kills = t4kills
         self.__t5kills = t5kills
         self.__timestamp = timestamp
@@ -42,15 +42,12 @@ class jugador():
             f'Highest Power: {self.podermasalto} {new_line}',
             f'Kill Points: {self.kp} {new_line}',
             f'Deaths: {self.muertos} {new_line}',
-            f'Assist RSS: {self.assist_rss} {new_line}',
+            f'RSS Assist: {self.__rss_assist} {new_line}',
             f'T4 Kills: {self.t4kills} {new_line}',
             f'T5 Kills: {self.t5kills} {new_line}',
             f'Date: {datetime.fromtimestamp(self.__timestamp)}' 
         )
         return ''.join(datos)
-            
-
-
 
     @property
     def id (self)->int:
@@ -80,8 +77,8 @@ class jugador():
     def muertos (self)->int:
         return self.__muertos
     @property
-    def assist_rss (self)->int:
-        return self.__assist_rss
+    def rss_assist (self)->int:
+        return self.__rss_assist
     @property
     def t4kills (self)->int:
         return self.__t4kills
@@ -119,9 +116,9 @@ class jugador():
     @muertos.setter
     def muertos (self, a:int)->None:
         self.__muertos = a
-    @assist_rss.setter
-    def assist_rss(self,a:int)->None:
-        self.__assist_rss = a
+    @rss_assist.setter
+    def rss_assist(self,a:int)->None:
+        self.__rss_assist = a
     @t4kills.setter
     def t4kills (self,a:int)->None:
         self.__t4kills = a
@@ -142,11 +139,12 @@ class jugador():
             self.podermasalto,
             self.kp,
             self.muertos,
-            self.assist_rss,
+            self.rss_assist,
             self.t4kills,
             self.t5kills,
             self.timestamp
         ]
+
     def setInactivo(self)->None:
         self.nombre ="Inactive Player"
         self.alianza ="Inactive Player"
@@ -154,6 +152,6 @@ class jugador():
         self.podermasalto = 0
         self.kp = 0
         self.muertos = 0
-        self.assist_rss = 0
+        self.rss_assist = 0
         self.t4kills = 0
         self.t5kills = 0

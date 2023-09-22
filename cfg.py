@@ -1,35 +1,74 @@
-##REGIONES DE ESCANEO DE DATOS en formato tupla bbox
-##(left_x, top_y, right_x, bottom_y)
-#REGIONES DE BUSQUEDA 
-regions = dict(
-    #id =(1070,270,1220,310),
-    id =(1050,270,1220,320),
-    name=(925,310,1200,345),
-    alliance=(905,410,1145,445),
-    power = (1160,415,1400,460),
-    #power=(1130,225,1260,250),
-    powerH=(1400,345,1621,375),
-    kp_more_info=(1600,220,1730,250),
-    kp_profile = (1410,415,1665,450),
-    deaths=(1400,530,1680,555),
-    assist_rss =(1400,760,1680,790),
-    #t4kills=(1135,480,1300,515),
-    t4kills=(1127,480,1400,520),
-    #t5kills=(1135,530,1300,555),
-    t5kills=(1127,520,1400,560),
-    screenshots=(320,1600,80,900),
-    title_gobernador = (860,165,1380,235),
-    title_clasificacion_poder = (740,125,1480,165),
-    title_mas_informacion = (740,125,1480,165)
+from typing_extensions import TypeAlias
+
+#left_x, top_y, right_x, bottom_y
+_region: TypeAlias = tuple[int, int, int, int]
+_point: TypeAlias = tuple[int,int]
+
+class location():
+    def __init__(self, region:_region, title:str|None=None) -> None:
+        self.region = region
+        self.title = title
+    def __str__(self) -> str:
+        return "Region:" + str(self.region) + " title:" + str(self.title)
+
+
+BASE_PATH='./'
+
+#PATHS
+PATHS=dict(
+    IMAGES= BASE_PATH +  'images/',
+    SCREENSHOTS=BASE_PATH + 'screenshots/',
+    CSV=BASE_PATH + 'csv/'
 )
 
-titulos = dict(
-    perfil_gob ="pereiil del gorernador",
-    mas_info = "MAS INFORMACION",
-    classificacion = "CLASIFICACION DE PODER INDIVIDUAL"
+TESSERACT = dict(
+    PATH = "C:\Program Files\Tesseract-OCR",
+    ONLY_NUMBERS = '--psm 7 --oem 3 -c tessedit_char_whitelist=0123456789',
+    ALPHANUMERIC = '--psm 7 --oem 3'
 )
+#WINDOWS
+TITLE_WINDOW_GOV_PROFILE = "PERFIL DEL GOBERNADOR"
+TITLE_WINDOW_MORE_INFO = "MAS INFORMACION"
+TITLE_WINDOW_POWER_STANDINGS = "CLASIFICACION DE PODER INDIVIDUAL"
 
-csv_header = [
+#WINDOWS
+REGION_WINDOW_GOV_PROFILE = _region((860,165,1380,235))
+REGION_WINDOW_MORE_INFO = _region((740,125,1480,165))
+REGION_WINDOW_POWER_STANDINGS = _region ((740,125,1480,165))
+
+
+#WHERE IS THE DATA TO COLLECT
+DATA_ID = _region((1040,270,1220,318))
+DATA_NAME = _region((925,310,1200,345))
+DATA_ALLIANCE = _region((910,410,1165,445))
+DATA_POWER = _region((1160,415,1400,460))
+DATA_POWERH = _region((1400,345,1630,380))
+DATA_KP = _region ((1410,415,1665,450))
+DATA_DEATHS = _region ((1400,530,1630,560))
+DATA_RSS_ASSIST = _region((1400,760,1630,790))
+DATA_T4KILLS = _region((1127,480,1400,520))
+DATA_T5KILLS = _region ((1127,520,1400,560))
+
+#WHERE HAVE TO CLICK
+CLICK_INFO_KP = _point((1440,393))
+CLICK_MORE_INFO = _point((670,813))
+CLICK_CLOSE_MORE_INFO = _point((1715, 135))
+CLICK_CLOSE_GOV_PROFILE = _point((1685,185))
+CLICK_KILLS_STATS = _point((1400, 236))
+CLICK_COPY_NAME = _point((710,235))
+
+#(0,+100)
+STANDING_POS = list([
+    (0,0),
+    (610,370),#Primera
+    (610,470),#Segunda
+    (610,570),#Tercera
+    (610,670),#a partir de la cuarta
+    (610,770),#Quinta
+    (610,870)#Sexta y ultima
+])
+
+CSV_HEADER = [
     'ID',
     'POSITION',
     'NAME',
@@ -43,82 +82,3 @@ csv_header = [
     'T5_KILLS',
     'TIMESTAMP'
 ]
-
-pos_clasificacion = list([
-    (0,0),
-    (610,370),
-    (610,470),
-    (610,570),
-    (610,670),
-    (610,770),
-])
-
-
-posiciones = dict(
-    info_kp = (1440,393),
-    mas_info = (670,813),
-    cerrar_mas_info = (1715, 135),
-    cerrar_perfil =(1685,185),
-    kills = (1400, 236),
-    copy_name_mas_info =(710,235),
-    copy_name_profile = (1060,330)
-)
-base_path='./'
-
-#PATHS
-paths=dict(
-    images= base_path +  'images/',
-    patterns= base_path + 'patterns/',
-    screenshots=base_path + 'screenshots/',
-    csv=base_path + 'csv/'
-)
-#GAME CONF
-game = dict(
-  width= 1600,
-  height= 900
-)
-
-#SCAN OPTIONS
-scan = dict(
-    first_pos= (610,370),
-    start=1,
-    end = 10,
-    #Espacio entre las columnas de la clasificacion general para el desplazamiento de los 4 primeros
-    standings_space = 100,
-    #Para pa.locateimage
-    confidence = 0.95
-)
-
-#PATTERNS TO IDENTIFY SCREENS
-patterns = dict(
-  profile_pic= 'icon_profile_pic.png',
-  classifications= 'icon_clasificaciones.png',
-  classifications_power= 'icon_clasificaciones_poder_2.png',
-  more_info= 'icon_masinformacion.png',
-  info_kp= 'icon_infokp.png',
-  close= 'icon_cerrar_perfil.png',
-  copy_name= 'icon_copy_name.png'
-)
-
-#SCREENS
-screens = dict(
-  profile= paths['images'] + 'pantalla_perfil_gobernador_2.png',
-  more_info= paths['images'] + 'pantalla_mas_informacion.png',
-  kd_standings_power =paths['images'] + 'pantalla_clasificacion_poder.png'
-)
-
-#ICONS
-icons = dict(
-    profile =  paths['images'] +  'icon_profile_pic.png', 
-    standings = paths['images'] +  'icon_clasificaciones.png',
-    power = paths['images'] +  'icon_clasificaciones_poder.png',
-    close =  paths['images'] +  'icon_cerrar_perfil.png'
-)
-
-
-tesseract = dict(
-    path = "C:\Program Files\Tesseract-OCR",
-    #cfg_only_numbers = '--psm 7 --oem 1 -c tessedit_char_whitelist=0123456789',
-    cfg_only_numbers = '--psm 7 --oem 3 -c tessedit_char_whitelist=0123456789 lang="spa"',
-    cfg_alphanumeric = '--psm 7 --oem 3'
-)
