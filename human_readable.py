@@ -11,8 +11,8 @@ def human_format(num):
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
 
 
-origen_name = '3043_20230911_144420_data.csv'
-destino_name = '3043_20230911_144420_data_simple.csv'
+origen_name = r'D:\proyectos\pyRoK\csv\2023_09_22\3131_20230922_222803_data.csv'
+destino_name = r'D:\proyectos\pyRoK\csv\2023_09_22\3131_20230922_222803_data_HR.csv'
 
 origen = open (file = origen_name,mode='r', newline='', encoding="utf-8")
 datos_origen = csv.reader(origen)
