@@ -44,6 +44,7 @@ def prepare_image (img_in:Image)->Image:
     return img_out
 
 def check_screeen (region_in,titulo:str)->bool:
+    time.sleep(0.3)
     return datos_alfanumericos(capture_region(region_in,True)) == titulo
 
 
