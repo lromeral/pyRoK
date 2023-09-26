@@ -48,6 +48,7 @@ def check_screeen (region_in,titulo:str)->bool:
     return datos_alfanumericos(capture_region(region_in,True)) == titulo
 
 
+
 def screenshot (strPath:str)->Image:
     logger.debug (screenshot.__name__)
     logger.info ("Capturando pantana en " + strPath)
@@ -73,18 +74,6 @@ def crearCarpeta(path:str):
     except:
         logger.critical ("No se pudo crear el directorio " +  path)
         exit(-1)
-    
-def procesar_pantalla(img:Image, nombre_ventana:str, hacer_click:bool=True)->coords:
-    logger.debug (procesar_pantalla.__name__)
-    if (not is_screen(img, nombre_ventana)):
-        logger.critical ("Finalizando")
-        exit(-1)
-    else:
-        zero = pa.locateOnScreen(img,confidence=cfg.scan['confidence'])
-        logger.info ("Moviendo a imagen encontrada...")
-        pa.moveTo(zero.left + zero.width/2, zero.top + zero.height/2,duration=3)
-        if hacer_click:click()
-        return coords((zero.left,zero.top))
 
 def write_to_csv(data:list, fichero, header:list):
     logger.debug (write_to_csv.__name__)
@@ -114,19 +103,17 @@ def datos_numericos(img:Image)->int:
     intentos = 0
     while True:
         intentos +=1
-        lecturas = 5
-        for lectura in range(0,lecturas):
-            datos[lectura] =  ((pytesseract.image_to_string(img,config=cfg.TESSERACT['ONLY_NUMBERS']).strip()))
-            time.sleep(0.2)
-                
+        lecturas = 3
+        for lectura in range(1,lecturas):
+            datos.append(((pytesseract.image_to_string(img,config=cfg.TESSERACT['ONLY_NUMBERS']).strip())))
+            time.sleep(0.1)
         if intentos >10: 
             print ("No se consiguo el dato")
             exit(-1)    
         else:
-            if all_equal(lecturas):
+            if all_equal(datos):
                 break 
     return int(datos[0]) if (datos[0].isnumeric() and datos[0]==datos[1]) else -1
-
 
 def get_dato_alfanumerico(region, count:int, data:jugador, capturar:bool=False)->str:
     logger.debug (get_dato_alfanumerico.__name__)
