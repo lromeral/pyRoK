@@ -26,12 +26,16 @@ class captura_screenshots():
         self.logger.debug (self.process_standings.__name__)
         self.logger.debug (f"Haciendo click en la posicion {position}")
         #Captura la pantalla de clasificaciones
-        date_str = datetime.now().strftime('%Y%m%d_%H%M%S')
-        nombre_archivo = f"{self.kdname}_{num}_{date_str}_standings.png"
+        nombre_archivo = f"{self.kdname}_{num}_standings.png"
         self.captura_pantalla(c.SCREENSHOT_STANDINGS,nombre_archivo)
         u.click_on_location(position)
         
     def process_profile(self, pos_in_standings:int):
+        #Tiempo de creacion
+        nombre_archivo = f"{self.screenshot_scan_folder }/{self.kdname}_{pos_in_standings}_timestamp.txt"
+        with open(nombre_archivo, 'w',encoding="utf-8") as f:
+            f.write(datetime.utcnow())
+        
         self.logger.debug (self.process_profile.__name__)
         self.logger.debug (f"Procesando posicion: {pos_in_standings}")
         self.jugador.pos = pos_in_standings
@@ -43,20 +47,16 @@ class captura_screenshots():
             self.inactivo = True
             return
         #Captura la pantalla de perfil
-        date_str = datetime.now().strftime('%Y%m%d_%H%M%S')
-        nombre_archivo = f"{self.kdname}_{pos_in_standings}_{date_str}_profile.png"
+
+        nombre_archivo = f"{self.kdname}_{pos_in_standings}_profile.png"
         self.captura_pantalla(c.SCREENSHOT_GOV_PROFILE,nombre_archivo)
 
     def process_more_info (self, pos_in_standings):
         self.logger.debug (self.process_more_info.__name__)
         u.click_on_location(c.CLICK_MORE_INFO)
-        #self.jugador.podermasalto = u.datos_numericos(u.capture_region(c.DATA_POWERH))
-        #self.jugador.muertos = u.datos_numericos(u.capture_region(c.DATA_DEATHS))
-        #self.jugador.rss_assist = u.datos_numericos(u.capture_region(c.DATA_RSS_ASSIST))
         
         #Captura la pantalla de perfil
-        date_str = datetime.now().strftime('%Y%m%d_%H%M%S')
-        nombre_archivo = f"{self.kdname}_{pos_in_standings}_{date_str}_more_info.png"
+        nombre_archivo = f"{self.kdname}_{pos_in_standings}_more_info.png"
         self.captura_pantalla(c.SCREENSHOT_MORE_INFO, nombre_archivo)
         
         u.click_on_location (c.CLICK_COPY_NAME)
@@ -78,8 +78,7 @@ class captura_screenshots():
         #self.jugador.t4kills=u.datos_numericos(u.capture_region(c.DATA_T4KILLS))
         #self.jugador.t5kills=u.datos_numericos(u.capture_region(c.DATA_T5KILLS))
         #Captura la pantalla de perfil
-        date_str = datetime.now().strftime('%Y%m%d_%H%M%S')
-        nombre_archivo = f"{self.kdname}_{pos_in_standings}_{date_str}_kp.png"
+        nombre_archivo = f"{self.kdname}_{pos_in_standings}_kp.png"
         self.captura_pantalla(c.SCREENSHOT_MORE_INFO ,nombre_archivo)
     def close_profile(self):
         u.click_on_location(c.CLICK_CLOSE_GOV_PROFILE)
@@ -128,3 +127,4 @@ class captura_screenshots():
             posicion_anterior = posicion_siguiente
         return True
 
+        date_str = datetime.now().strftime('%Y%m%d_%H%M%S')
