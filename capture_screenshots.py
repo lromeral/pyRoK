@@ -34,8 +34,7 @@ class captura_screenshots():
         #Tiempo de creacion
         nombre_archivo = f"{self.screenshot_scan_folder }/{self.kdname}_{pos_in_standings}_timestamp.txt"
         with open(nombre_archivo, 'w',encoding="utf-8") as f:
-            f.write(datetime.utcnow())
-        
+            f.write(str(datetime.timestamp(datetime.utcnow())))        
         self.logger.debug (self.process_profile.__name__)
         self.logger.debug (f"Procesando posicion: {pos_in_standings}")
         self.jugador.pos = pos_in_standings

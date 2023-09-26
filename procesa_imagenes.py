@@ -6,7 +6,7 @@ import cv2 as cv
 from jugador import jugador
 directorio_base = f"{c.SCANS_PATH}"
 
-directorio_analisis = '3131_20230926_213322'
+directorio_analisis = '3131_20230926_215427'
 dir_in = f"{directorio_base}{directorio_analisis}/{c.SCREENSHOTS_PATH}/"
 kdname = directorio_analisis[:4]
 filename_csv = f"{directorio_base}{directorio_analisis}/{directorio_analisis}.csv"
@@ -63,17 +63,17 @@ def get_nombre_from_file (txt_file_path:str)->str:
     except FileNotFoundError:
         return "InactivePlayer"
 
-def get_timestamp_from_file (txt_file_path:str)->str:
+def get_timestamp_from_file (txt_file_path:str)->float:
     try:
         with open(txt_file_path,mode='r',encoding="utf-8") as f:
             data = f.read()
-            return data
+            return float(data)
     except FileNotFoundError:
         return "InactivePlayer"
 
 
 posicion_ini=1
-posicion_final = 10
+posicion_final = 4
 
 for posicion in range(posicion_ini,posicion_final):
     j = jugador()
@@ -98,7 +98,7 @@ for posicion in range(posicion_ini,posicion_final):
     j.t4kills = get_numeric_data_from_image(img_kp_path, REGION_KP_T4)
     j.t5kills = get_numeric_data_from_image(img_kp_path, REGION_KP_T5)
 
-    j.timestamp = get_nombre_from_file(txt_timestamp_path)
+    j.timestamp = get_timestamp_from_file(txt_timestamp_path)
 
     print (j)
     
