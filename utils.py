@@ -59,7 +59,7 @@ def guardar_imagen (img:Image, path:str, nombre:str)->bool:
     if not os.path.exists(path): crearCarpeta (path)
     img.save (path + "/" + nombre)
 
-def click (time_pressed:float=0.1)->None:
+def click (time_pressed:float=0.3)->None:
     logger.debug (click.__name__)
     time.sleep(time_pressed)
     pa.click()
