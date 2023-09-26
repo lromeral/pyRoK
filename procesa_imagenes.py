@@ -17,6 +17,7 @@ standing_sufix = "_standings.png"
 more_info_sufix = "_more_info.png"
 kp_sufix = "_kp.png"
 name_sufix = "_name.txt"
+timestamp_sufix = "_timestamp.txt"
 
 ##REGIONS
 REGION_PROFILE_GOV_ID = (550,120,700,155)
@@ -55,9 +56,20 @@ def get_alphanumeric_data_from_image(img_profile_path:str, region)->str:
         return "#error#"
 
 def get_nombre_from_file (txt_file_path:str)->str:
-    with open(txt_file_path,mode='r',encoding="utf-8") as f:
-        name = f.read()
-        return name
+    try:
+        with open(txt_file_path,mode='r',encoding="utf-8") as f:
+            name = f.read()
+            return name
+    except FileNotFoundError:
+        return "InactivePlayer"
+
+def get_timestamp_from_file (txt_file_path:str)->str:
+    try:
+        with open(txt_file_path,mode='r',encoding="utf-8") as f:
+            data = f.read()
+            return data
+    except FileNotFoundError:
+        return "InactivePlayer"
 
 
 posicion_ini=1
@@ -70,6 +82,7 @@ for posicion in range(posicion_ini,posicion_final):
     img_more_info_path = f"{dir_in}/{kdname}_{posicion}{more_info_sufix}" 
     img_kp_path = f"{dir_in}/{kdname}_{posicion}{kp_sufix}" 
     txt_file_path = f"{dir_in}/{kdname}_{posicion}{name_sufix}" 
+    txt_timestamp_path =f"{dir_in}/{kdname}_{posicion}{timestamp_sufix}" 
 
     j.kd = kdname
     j.pos = posicion
@@ -84,6 +97,8 @@ for posicion in range(posicion_ini,posicion_final):
 
     j.t4kills = get_numeric_data_from_image(img_kp_path, REGION_KP_T4)
     j.t5kills = get_numeric_data_from_image(img_kp_path, REGION_KP_T5)
+
+    j.timestamp = get_nombre_from_file(txt_timestamp_path)
 
     print (j)
     
