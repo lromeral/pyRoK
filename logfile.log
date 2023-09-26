@@ -22884,6 +22884,7 @@ Date: 2023-09-26 18:44:11.803249~module:capture_screenshots~function:capture_scr
 2023-09-26 21:29:45,154~DEBUG~datos_numericos~module:utils~function:utils
 2023-09-26 21:29:45,816~DEBUG~datos_numericos~module:utils~function:utils
 2023-09-26 21:29:46,478~DEBUG~datos_numericos~module:utils~function:utils
+<<<<<<< HEAD
 2023-09-26 21:29:47,205~DEBUG~datos_numericos~module:utils~function:utils
 2023-09-26 21:29:47,923~DEBUG~datos_numericos~module:utils~function:utils
 2023-09-26 21:29:48,495~DEBUG~write_to_csv~module:utils~function:utils
@@ -24142,3 +24143,5 @@ Date: 2023-09-26 18:44:11.803249~module:capture_screenshots~function:capture_scr
 2023-09-26 21:40:01,104~DEBUG~datos_numericos~module:utils~function:utils
 2023-09-26 21:40:01,713~DEBUG~write_to_csv~module:utils~function:utils
 2023-09-26 21:40:01,714~INFO~Guardando datos en fichero csv~module:utils~function:utils
+=======
+>>>>>>> 83b3fe632d64269e9c3afe573f0a4a03c94fe9bf
