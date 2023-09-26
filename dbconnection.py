@@ -23,17 +23,27 @@ class conn_bd:
         except mariadb.Error as e:
             print(f"Error connecting to MariaDB Platform: {e}")
             sys.exit(1)
-    def exec
+    def insert_scandata_row (self,idscan:int,data:datos_reporte):
+        cur = self.conn.cursor()
+        sql = """INSERT INTO 
+            scandata 
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+        new_row = [idscan].append(data.to_list())
+        cur.execute(sql,new_row) 
+
+    def get_conn (self):
+        return self.conn
+
+
+
+conn = conn_bd('rok','rok#12345.','192.168.10.112',3306,'rok').get_conn()
+
 def get_reino_from_filename(filename:str)->str:
     result = filename[:filename.find("_")]
     return result
 
 #origen_filename = '3135_20230912_185502_data.csv'
-origen_filename = './reports_ok/3131_20230924_184114_data.csv'
-
-for f in os.listdir():
-    if os.path.isfile(f):
-
+origen_filename = './reports_ok/3131_20230925_195016_data.csv'
 
 filename = os.path.basename(origen_filename)
 filename = os.path.splitext(filename)[0]

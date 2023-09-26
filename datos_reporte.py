@@ -95,3 +95,16 @@ class datos_reporte:
     @t5kills.setter   
     def t5kills (self,a:int)->None:
         self.__t5kills = a
+    def to_list(self)->list:
+        return [self.__id,
+            self.__name,
+            self.__alliance,
+            self.__position,
+            self.__power,
+            self.__powerH,
+            self.__kp,
+            self.__deaths,
+            self.__rss_assist,
+            self.__t4kills,
+            self.__t5kills,
+            self.__timestamp]
