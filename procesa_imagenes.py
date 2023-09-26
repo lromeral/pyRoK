@@ -4,6 +4,7 @@ import os
 from PIL import Image
 import cv2 as cv
 from jugador import jugador
+from datetime import datetime
 directorio_base = f"{c.SCANS_PATH}"
 
 directorio_analisis = '3131_20230926_215427'
@@ -69,7 +70,7 @@ def get_timestamp_from_file (txt_file_path:str)->float:
             data = f.read()
             return float(data)
     except FileNotFoundError:
-        return "InactivePlayer"
+        return datetime.timestamp(datetime.utcnow())
 
 
 posicion_ini=1
