@@ -6,7 +6,7 @@ import cv2 as cv
 from jugador import jugador
 directorio_base = f"{c.SCANS_PATH}"
 
-directorio_analisis = '3043_20230926_200403'
+directorio_analisis = '3131_20230926_213322'
 dir_in = f"{directorio_base}{directorio_analisis}/{c.SCREENSHOTS_PATH}/"
 kdname = directorio_analisis[:4]
 filename_csv = f"{directorio_base}{directorio_analisis}/{directorio_analisis}.csv"
@@ -61,7 +61,7 @@ def get_nombre_from_file (txt_file_path:str)->str:
 
 
 posicion_ini=1
-posicion_final = 300
+posicion_final = 10
 
 for posicion in range(posicion_ini,posicion_final):
     j = jugador()

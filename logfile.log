@@ -22884,3 +22884,320 @@ Date: 2023-09-26 18:44:11.803249~module:capture_screenshots~function:capture_scr
 2023-09-26 21:29:45,154~DEBUG~datos_numericos~module:utils~function:utils
 2023-09-26 21:29:45,816~DEBUG~datos_numericos~module:utils~function:utils
 2023-09-26 21:29:46,478~DEBUG~datos_numericos~module:utils~function:utils
+2023-09-26 21:33:22,098~INFO~2023-09-26 19:33:22.098773~module:main~function:main
+2023-09-26 21:33:22,103~DEBUG~start~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:22,103~INFO~Procesando jugadores desde 1 hasta 11~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:22,103~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:22,104~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:22,104~DEBUG~Haciendo click en la posicion (610, 370)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:22,104~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:22,242~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:22,343~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:23,450~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:23,450~DEBUG~Procesando posicion: 1~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:23,751~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:23,789~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:33:24,441~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:25,621~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:25,621~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:25,722~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:26,333~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:26,446~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:26,548~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:27,151~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:27,152~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:27,252~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:28,155~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:28,266~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:28,367~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:29,484~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:29,585~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:30,207~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:30,207~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:30,209~DEBUG~Haciendo click en la posicion (610, 470)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:30,209~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:30,341~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:30,443~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:31,546~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:31,546~DEBUG~Procesando posicion: 2~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:31,847~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:31,872~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:33:32,013~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:33,188~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:33,188~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:33,289~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:33,901~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:34,011~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:34,112~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:34,715~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:34,715~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:34,817~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:35,734~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:35,854~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:35,955~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:37,068~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:37,169~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:37,774~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:37,774~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:37,774~DEBUG~Haciendo click en la posicion (610, 570)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:37,774~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:37,900~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:38,002~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:39,104~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:39,104~DEBUG~Procesando posicion: 3~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:39,405~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:39,441~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:33:39,577~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:40,757~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:40,757~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:40,858~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:41,468~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:41,581~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:41,682~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:42,302~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:42,303~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:42,403~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:43,319~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:43,437~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:43,539~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:44,642~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:44,743~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:45,349~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:45,349~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:45,349~DEBUG~Haciendo click en la posicion (610, 670)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:45,349~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:45,490~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:45,591~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:46,702~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:46,702~DEBUG~Procesando posicion: 4~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:47,003~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:47,039~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:33:47,171~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:48,338~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:48,338~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:48,439~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:49,052~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:49,165~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:49,266~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:49,886~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:49,887~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:49,987~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:50,889~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:50,998~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:51,099~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:52,202~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:52,303~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:52,922~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:52,922~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:52,922~DEBUG~Haciendo click en la posicion (610, 670)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:52,922~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:53,041~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:53,142~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:54,252~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:54,252~DEBUG~Procesando posicion: 5~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:54,553~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:54,591~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:33:54,727~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:55,900~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:55,900~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:56,001~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:56,619~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:56,729~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:56,830~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:57,440~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:33:57,440~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:57,541~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:58,445~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:33:58,549~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:58,650~DEBUG~click~module:utils~function:utils
+2023-09-26 21:33:59,753~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:33:59,853~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:00,469~DEBUG~ID: -1 
+Position:5 
+Name: Arthur XV 
+Alliance: #Error# 
+Power: -1 
+Highest Power: -1 
+Kill Points: -1 
+Deaths: -1 
+RSS Assist: -1 
+T4 Kills: -1 
+T5 Kills: -1 
+Date: 2023-09-26 19:33:54.252914~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:00,470~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:00,470~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:00,471~DEBUG~Haciendo click en la posicion (610, 670)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:00,471~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:00,597~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:00,699~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:01,802~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:01,802~DEBUG~Procesando posicion: 6~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:02,103~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:02,142~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:34:02,270~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:03,436~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:03,436~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:03,538~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:04,153~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:04,262~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:04,364~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:04,967~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:04,967~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:05,068~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:05,971~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:06,083~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:06,184~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:07,303~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:07,404~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:08,020~DEBUG~ID: -1 
+Position:6 
+Name: IIMHMT2 
+Alliance: #Error# 
+Power: -1 
+Highest Power: -1 
+Kill Points: -1 
+Deaths: -1 
+RSS Assist: -1 
+T4 Kills: -1 
+T5 Kills: -1 
+Date: 2023-09-26 19:34:01.802003~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:08,021~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:08,021~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:08,021~DEBUG~Haciendo click en la posicion (610, 670)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:08,021~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:08,143~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:08,245~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:09,349~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:09,349~DEBUG~Procesando posicion: 7~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:09,650~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:09,674~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:34:09,814~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:10,974~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:10,974~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:11,076~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:11,687~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:11,798~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:11,899~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:12,502~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:12,503~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:12,604~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:13,506~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:13,618~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:13,720~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:14,838~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:14,939~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:15,545~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:15,545~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:15,545~DEBUG~Haciendo click en la posicion (610, 670)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:15,546~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:15,661~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:15,761~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:16,864~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:16,864~DEBUG~Procesando posicion: 8~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:17,165~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:17,194~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:34:17,332~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:18,494~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:18,494~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:18,596~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:19,204~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:19,311~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:19,412~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:20,014~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:20,015~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:20,116~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:21,018~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:21,129~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:21,231~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:22,338~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:22,439~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:23,044~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:23,044~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:23,044~DEBUG~Haciendo click en la posicion (610, 670)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:23,044~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:23,161~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:23,263~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:24,366~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:24,366~DEBUG~Procesando posicion: 9~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:24,667~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:24,692~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:34:24,822~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:25,996~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:25,996~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:26,098~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:26,704~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:26,816~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:26,917~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:27,521~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:27,521~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:27,622~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:28,538~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:28,652~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:28,753~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:29,871~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:29,972~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:30,578~DEBUG~process_player~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:30,578~DEBUG~process_standings~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:30,578~DEBUG~Haciendo click en la posicion (610, 670)~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:30,578~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:30,698~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:30,799~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:31,905~DEBUG~process_profile~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:31,905~DEBUG~Procesando posicion: 10~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:32,206~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:32,244~DEBUG~datos_alfanumericos~module:utils~function:utils
+2023-09-26 21:34:32,375~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:33,541~DEBUG~process_more_info~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:33,541~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:33,642~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:34,256~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:34,373~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:34,474~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:35,088~DEBUG~_process_kp_stats~module:capture_screenshots~function:capture_screenshots
+2023-09-26 21:34:35,089~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:35,190~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:36,105~DEBUG~capture_region~module:utils~function:utils
+2023-09-26 21:34:36,218~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:36,320~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:37,422~DEBUG~click_on_location~module:utils~function:utils
+2023-09-26 21:34:37,523~DEBUG~click~module:utils~function:utils
+2023-09-26 21:34:38,130~INFO~2023-09-26 19:34:38.130262~module:main~function:main
+2023-09-26 21:34:38,130~INFO~Tiempo transcurrido: 0:01:16.031489~module:main~function:main
+2023-09-26 21:35:24,486~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,487~INFO~Creando fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,492~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,492~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,497~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,497~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,501~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,502~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,506~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,507~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,512~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,513~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,517~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,518~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,522~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,523~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,528~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,529~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:24,534~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:24,535~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,986~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,986~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,987~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,987~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,988~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,988~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,989~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,989~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,991~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,991~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,993~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,993~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,995~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,995~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,996~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,996~INFO~Guardando datos en fichero csv~module:utils~function:utils
+2023-09-26 21:35:56,997~DEBUG~write_to_csv~module:utils~function:utils
+2023-09-26 21:35:56,997~INFO~Guardando datos en fichero csv~module:utils~function:utils
