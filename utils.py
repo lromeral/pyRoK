@@ -110,8 +110,22 @@ def datos_alfanumericos(img:Image)->str:
 #Devuelve los datos obtenidos sobre la id de jugador
 def datos_numericos(img:Image)->int:
     logger.debug (datos_numericos.__name__)
-    datos =  (pytesseract.image_to_string(img,config=cfg.TESSERACT['ONLY_NUMBERS']).strip())
-    return int(datos) if datos.isnumeric() else -1
+    datos = list([])
+    intentos = 0
+    while True:
+        intentos +=1
+        lecturas = 5
+        for lectura in range(0,lecturas):
+            datos[lectura] =  ((pytesseract.image_to_string(img,config=cfg.TESSERACT['ONLY_NUMBERS']).strip()))
+            time.sleep(0.2)
+                
+        if intentos >10: 
+            print ("No se consiguo el dato")
+            exit(-1)    
+        else:
+            if all_equal(lecturas):
+                break 
+    return int(datos[0]) if (datos[0].isnumeric() and datos[0]==datos[1]) else -1
 
 
 def get_dato_alfanumerico(region, count:int, data:jugador, capturar:bool=False)->str:
