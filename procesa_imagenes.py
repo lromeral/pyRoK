@@ -7,7 +7,7 @@ from jugador import jugador
 from datetime import datetime
 directorio_base = f"{c.SCANS_PATH}"
 
-directorio_analisis = '3131_20230926_213322'
+directorio_analisis = '3043_20230926_200403'
 dir_in = f"{directorio_base}{directorio_analisis}/{c.SCREENSHOTS_PATH}/"
 kdname = directorio_analisis[:4]
 filename_csv = f"{directorio_base}{directorio_analisis}/{directorio_analisis}.csv"
@@ -31,18 +31,19 @@ REGION_MORE_INFO_POWERH = (800,230,1150,280)
 REGION_MORE_INFO_DEATHS = (800,410,1150,460)
 REGION_MORE_INFO_RSS_ASSIST = (800,630,1150,680)
 
-REGION_KP_T4 = (640,370,900,405)
-REGION_KP_T5 = (640,415,900,450)
+REGION_KP_T4 = (651,370,900,405)
+REGION_KP_T5 = (651,415,900,450)
 
 def capture_region_from_file(img:Image, region)->Image:
     img_data = img.crop(region)
     return img_data
 
 
-def get_numeric_data_from_image(img_profile_path:str, region)->int:
+def get_numeric_data_from_image(img_path:str, region)->int:
+    print (img_path)
     try:
-        img_profile = Image.open(img_profile_path)
-        img2 = u.prepare_image(capture_region_from_file(img_profile,region))
+        img = Image.open(img_path)
+        img2 = u.prepare_image(capture_region_from_file(img,region))
         return u.datos_numericos (img2)  
     except FileNotFoundError:
         return -1
@@ -64,19 +65,21 @@ def get_nombre_from_file (txt_file_path:str)->str:
     except FileNotFoundError:
         return "InactivePlayer"
 
-def get_timestamp_from_file (txt_file_path:str)->str:
+def get_timestamp_from_file (txt_file_path:str)->float:
     try:
         with open(txt_file_path,mode='r',encoding="utf-8") as f:
             data = f.read()
-            return data
+            return float(data)
     except FileNotFoundError:
         return datetime.timestamp(datetime.utcnow())
 
 
 posicion_ini=1
-posicion_final = 10
+posicion_final = 300
 
-for posicion in range(posicion_ini,posicion_final):
+
+
+for posicion in range(posicion_ini,posicion_final+1):
     j = jugador()
 
     img_profile_path = f"{dir_in}/{kdname}_{posicion}{profile_sufix}" 
@@ -99,9 +102,8 @@ for posicion in range(posicion_ini,posicion_final):
     j.t4kills = get_numeric_data_from_image(img_kp_path, REGION_KP_T4)
     j.t5kills = get_numeric_data_from_image(img_kp_path, REGION_KP_T5)
 
-    j.timestamp = get_nombre_from_file(txt_timestamp_path)
+    j.timestamp = get_timestamp_from_file(txt_timestamp_path)
 
     print (j)
     
     u.write_to_csv(data=j.getJugador(), fichero= filename_csv, header=c.CSV_HEADER)
-
