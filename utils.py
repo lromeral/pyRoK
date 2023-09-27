@@ -11,13 +11,15 @@ from mylogger import getmylogger
 from jugador import jugador
 import cv2
 import numpy as np
+from telegram import telegram_notify
+from datetime import datetime
     
 moverA = pa.moveTo
 obtener_posicion = pa.position
 pauto=pa
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 logger = getmylogger(__name__)
-
+notify = telegram_notify()
 
 def click_on_location (loc:cfg._point)->bool:
     logger.debug (click_on_location.__name__)
@@ -87,7 +89,7 @@ def crearCarpeta(path:str):
         os.mkdir(path)
     except:
         logger.critical ("No se pudo crear el directorio " +  path)
-        exit(-1)
+        salir("No se pudo crear el directorio")
 
 def write_to_csv(data:list, fichero, header:list):
     logger.debug (write_to_csv.__name__)
@@ -125,7 +127,7 @@ def datos_numericos(img:Image)->int:
             time.sleep(0.1)
         if intentos >10: 
             print ("No se consiguo el dato")
-            exit(-1)    
+            salir("No se encuentra el dato numerico")
         else:
             if all_equal(datos):
                 break 
@@ -189,7 +191,7 @@ def is_ventana (region:str ,titulo:str)->bool:
 #Aborta el programa con mensaje en consola
 def salir (mensaje:str=""):
     logger.debug (salir.__name__)
-    #print (mensaje)
+    notify.send_message (f'Programa abortado a las {datetime.now()}. Razón: {mensaje}')
     exit(-1)
 
 
