@@ -44,8 +44,22 @@ def prepare_image (img_in:Image)->Image:
     return img_out
 
 def check_screeen (region_in,titulo:str)->bool:
-    time.sleep(0.3)
-    return datos_alfanumericos(capture_region(region_in,True)) == titulo
+    logger.debug(check_screeen.__name__)
+    logger.debug(f"check_screen buscando:{titulo}")
+    retry = 0
+    retry_max = 5
+    while True:
+        if datos_alfanumericos(capture_region(region_in,True)) == titulo: 
+            logger.debug(f"check_screen encontrada:{titulo}")
+            return True
+        else:
+            if retry < retry_max:
+                logger.warning(f"Reintenado check_screen {retry}")
+                retry+=1
+                time.sleep(retry)
+            else:
+                logger.error(f"check_screen no encontrada:{titulo}")
+                return False
 
 
 
@@ -99,6 +113,8 @@ def datos_alfanumericos(img:Image)->str:
 #Devuelve los datos obtenidos sobre la id de jugador
 def datos_numericos(img:Image)->int:
     logger.debug (datos_numericos.__name__)
+    #cv2.imshow('test',img)
+    #cv2.waitKey(0)
     datos = list([])
     intentos = 0
     while True:
@@ -113,6 +129,8 @@ def datos_numericos(img:Image)->int:
         else:
             if all_equal(datos):
                 break 
+
+    #print (f"Datos:{datos}")
     return int(datos[0]) if (datos[0].isnumeric() and datos[0]==datos[1]) else -1
 
 def get_dato_alfanumerico(region, count:int, data:jugador, capturar:bool=False)->str:
