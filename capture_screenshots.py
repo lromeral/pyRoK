@@ -6,6 +6,7 @@ from mylogger import getmylogger
 from datetime import datetime
 import os
 import time
+import utils as u
 
 class captura_screenshots():
     def __init__(self, kdname:str='' ,inicio:int=1, final:int=300) -> None:
@@ -20,7 +21,7 @@ class captura_screenshots():
     def process_standings(self,position:tuple, num:int):            
         self.logger.debug (self.process_standings.__name__)
         self.logger.debug (f"Haciendo click en la posicion {position}")
-        if (not u.check_screeen(c.REGION_WINDOW_POWER_STANDINGS,c.TITLE_WINDOW_POWER_STANDINGS)): exit(-1)
+        if (not u.check_screeen(c.REGION_WINDOW_POWER_STANDINGS,c.TITLE_WINDOW_POWER_STANDINGS)): u.salir ("No se encuentra la ventana clasificaciones generales")
         nombre_archivo = f"{self.kdname}_{num}_standings.png"
         self.captura_pantalla(c.SCREENSHOT_STANDINGS,nombre_archivo)
         u.click_on_location(position)
@@ -40,7 +41,7 @@ class captura_screenshots():
             self.inactivo = True
             return
         #Captura la pantalla de perfil
-        if (not u.check_screeen(c.REGION_WINDOW_GOV_PROFILE,c.TITLE_WINDOW_GOV_PROFILE)): exit(-1)
+        if (not u.check_screeen(c.REGION_WINDOW_GOV_PROFILE,c.TITLE_WINDOW_GOV_PROFILE)): u.salir ("No se encuentra la ventana perfil del gobernador")
         nombre_archivo = f"{self.kdname}_{pos_in_standings}_profile.png"
         self.captura_pantalla(c.SCREENSHOT_GOV_PROFILE,nombre_archivo)
 
@@ -48,7 +49,7 @@ class captura_screenshots():
         self.logger.debug (self.process_more_info.__name__)
         u.click_on_location(c.CLICK_MORE_INFO)
         nombre_archivo = f"{self.kdname}_{pos_in_standings}_more_info.png"
-        if (not u.check_screeen(c.REGION_WINDOW_MORE_INFO,c.TITLE_WINDOW_MORE_INFO)): exit(-1)
+        if (not u.check_screeen(c.REGION_WINDOW_MORE_INFO,c.TITLE_WINDOW_MORE_INFO)): u.salir ("No se encuentra la ventana mas infomacion")
         self.captura_pantalla(c.SCREENSHOT_MORE_INFO, nombre_archivo)
         u.click_on_location (c.CLICK_COPY_NAME)
         self.jugador.nombre = pc.paste()
@@ -60,13 +61,13 @@ class captura_screenshots():
 
     def _process_kp_stats (self, pos_in_standings:int):
         self.logger.debug (self._process_kp_stats.__name__)
-        if (not u.check_screeen(c.REGION_WINDOW_MORE_INFO,c.TITLE_WINDOW_MORE_INFO)): exit(-1)
+        if (not u.check_screeen(c.REGION_WINDOW_MORE_INFO,c.TITLE_WINDOW_MORE_INFO)): u.salir ("No se encuentra la ventana mas infomacion procesando kp details")
         u.click_on_location(c.CLICK_KILLS_STATS)
         nombre_archivo = f"{self.kdname}_{pos_in_standings}_kp.png"
         self.captura_pantalla(c.SCREENSHOT_MORE_INFO ,nombre_archivo)
     def close_profile(self):
         self.logger.debug (self.close_profile.__name__)
-        if (not u.check_screeen(c.REGION_WINDOW_GOV_PROFILE,c.TITLE_WINDOW_GOV_PROFILE)): exit(-1)
+        if (not u.check_screeen(c.REGION_WINDOW_GOV_PROFILE,c.TITLE_WINDOW_GOV_PROFILE)): u.salir ("No se encuentra la ventana perfil del gobernador al cerrarla")
         u.click_on_location(c.CLICK_CLOSE_GOV_PROFILE)
         
     def process_player (self,num:int, classf_position:tuple):
@@ -95,7 +96,7 @@ class captura_screenshots():
             self.jugador = j.jugador (kd=self.kdname)
             if self.inactivo:
                 indice_anterior = c.STANDING_POS.index(posicion_anterior)
-                posicion_siguiente = c.STANDING_POS[indice_anterior + 1] if indice_anterior <=6 else exit(-1)
+                posicion_siguiente = c.STANDING_POS[indice_anterior + 1] if indice_anterior <=6 else u.salir ("Error de indice de jugador al procesar inactivos")
                 self.inactivo =False
             else:
                 posicion_siguiente = c.STANDING_POS[x] if x <=3 else c.STANDING_POS[4]

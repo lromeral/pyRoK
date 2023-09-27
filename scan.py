@@ -6,6 +6,7 @@ import pyperclip as pc
 from mylogger import getmylogger 
 from datetime import datetime
 from PIL import Image, ImageEnhance
+import utils as u
 
 
 class scan():
@@ -95,7 +96,7 @@ class scan():
             if self.inactivo:
                 indice_anterior = c.STANDING_POS.index(posicion_anterior)
                 print (f"Indice anterior: {indice_anterior}")
-                posicion_siguiente = c.STANDING_POS[indice_anterior + 1] if indice_anterior <=6 else exit(-1)
+                posicion_siguiente = c.STANDING_POS[indice_anterior + 1] if indice_anterior <=6 else u.sair("Indice de busqueda inactivo incorrecto")
                 self.inactivo =False
             else:
                 posicion_siguiente = c.STANDING_POS[x] if x <=3 else c.STANDING_POS[4]
