@@ -85,7 +85,7 @@ class captura_screenshots():
     def process_player (self,num:int, classf_position:tuple):
         self.logger.debug (self.process_player.__name__)
         self.process_standings(classf_position,num)
-        time.sleep(0.5)
+        time.sleep(1)
         #get data from profile
         self.process_profile(num)
         #INACTIVO
@@ -94,7 +94,7 @@ class captura_screenshots():
         time.sleep(1)
         self.process_more_info(num)
         #get data from more info
-        time.sleep(0.5)
+        time.sleep(1)
         #get data from kill stats
         #close profile
         self.close_profile()
