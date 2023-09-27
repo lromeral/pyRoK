@@ -7,7 +7,7 @@ from jugador import jugador
 from datetime import datetime
 directorio_base = f"{c.SCANS_PATH}"
 
-directorio_analisis = '3043_20230926_200403'
+directorio_analisis = '3135_20230927_194121'
 dir_in = f"{directorio_base}{directorio_analisis}/{c.SCREENSHOTS_PATH}/"
 kdname = directorio_analisis[:4]
 filename_csv = f"{directorio_base}{directorio_analisis}/{directorio_analisis}.csv"
