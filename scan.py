@@ -16,7 +16,7 @@ class scan():
         self.final = final
         self.logger = getmylogger(__name__)
         self.time_of_creation = datetime.now()
-        self.filename_csv = c.PATHS['CSV'] + kdname + "_" + self.time_of_creation.strftime('%Y%m%d_%H%M%S') + '_data.csv'        
+        self.filename_csv = c.PATHS['CSV'] + self.time_of_creation.strftime('%Y%m%d_%H%M%S') + "_" + kdname  + '_data.csv'        
         self.inactivo = False
 
     def process_standings(self,position:tuple):
