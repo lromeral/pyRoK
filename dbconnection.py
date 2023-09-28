@@ -43,14 +43,15 @@ def get_reino_from_filename(filename:str)->str:
     return result
 
 #origen_filename = '3135_20230912_185502_data.csv'
-origen_filename = './reporte_in/3134_20230927_204532.csv'
+
+origen_filename = './reporte_in/3131_20230927_222628.csv'
 
 filename = os.path.basename(origen_filename)
 filename = os.path.splitext(filename)[0]
 datetime_string = filename[filename.find("_")+1:filename.find("d")-1]
 print (datetime_string)
 idscan = 0
-
+done = False
 try:
     cur = conn.cursor()
     kd = get_reino_from_filename(filename)
@@ -96,9 +97,12 @@ try:
 
     conn.commit()
     conn.close()
-    dest_filename = os.path.dirname(origen_filename) + "/" + os.path.splitext(os.path.basename(origen_filename))[0] + "_ok.csv"
-    os.rename(origen_filename,dest_filename)
+    done = True
 except Exception as e:
     print (f"Error: {e}")
+    done = False
     conn.rollback()
 
+if (done):
+    dest_filename = os.path.dirname(origen_filename) + "/" + os.path.splitext(os.path.basename(origen_filename))[0] + "_ok.csv"
+    os.rename(origen_filename,dest_filename)
