@@ -12,6 +12,10 @@ dir_in = f"{directorio_base}{directorio_analisis}{c.SCREENSHOTS_PATH}"
 kdname = directorio_analisis[:4]
 filename_csv = f"{directorio_base}{directorio_analisis}{directorio_analisis}.csv"
 
+directorio_analisis = '20230927_194121_3135'
+dir_in = f"{directorio_base}{directorio_analisis}{c.SCREENSHOTS_PATH}"
+kdname = directorio_analisis[16:20]
+filename_csv = f"{directorio_base}{directorio_analisis}{directorio_analisis}.csv"
 
 profile_sufix = "_profile.png"
 standing_sufix = "_standings.png"

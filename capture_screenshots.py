@@ -15,7 +15,7 @@ class captura_screenshots():
         self.kdname = kdname
         self.logger = getmylogger(__name__)
         self.inactivo = False
-        kd_scan_folder = c.SCANS_PATH + "/" + str(self.kdname) + "_" + datetime.now().strftime('%Y%m%d_%H%M%S')
+        kd_scan_folder = c.SCANS_PATH + "/"  + datetime.now().strftime('%Y%m%d_%H%M%S') + "_" + str(self.kdname) 
         self.screenshot_scan_folder = kd_scan_folder +"/" + c.SCREENSHOTS_PATH
 
     def process_standings(self,position:tuple, num:int):            

@@ -43,7 +43,7 @@ def get_reino_from_filename(filename:str)->str:
     return result
 
 #origen_filename = '3135_20230912_185502_data.csv'
-origen_filename = './scans/3043_20230926_200403/3043_20230926_200403.csv'
+origen_filename = './reporte_in/3134_20230927_204532.csv'
 
 filename = os.path.basename(origen_filename)
 filename = os.path.splitext(filename)[0]
@@ -61,10 +61,6 @@ try:
     rows = cur.fetchall()
     for r in rows:
         idscan = r[0]
-
-
-
-
     origen = open (file = origen_filename,mode='r', newline='', encoding="utf-8")
     datos_origen = csv.reader(origen)
 
@@ -100,6 +96,8 @@ try:
 
     conn.commit()
     conn.close()
+    dest_filename = os.path.dirname(origen_filename) + "/" + os.path.splitext(os.path.basename(origen_filename))[0] + "_ok.csv"
+    os.rename(origen_filename,dest_filename)
 except Exception as e:
     print (f"Error: {e}")
     conn.rollback()
