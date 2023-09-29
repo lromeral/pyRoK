@@ -39,16 +39,16 @@ class conn_bd:
 conn = conn_bd('rok','rok#12345.','192.168.10.112',3306,'rok').get_conn()
 
 def get_reino_from_filename(filename:str)->str:
-    result = filename[:filename.find("_")]
+    result = filename[16:20]
     return result
 
 #origen_filename = '3135_20230912_185502_data.csv'
 
-origen_filename = './reporte_in/3131_20230927_222628.csv'
+origen_filename = './reporte_in/20230928_121432_3129.csv'
 
 filename = os.path.basename(origen_filename)
 filename = os.path.splitext(filename)[0]
-datetime_string = filename[filename.find("_")+1:filename.find("d")-1]
+datetime_string = filename[:15]
 print (datetime_string)
 idscan = 0
 done = False
@@ -62,41 +62,41 @@ try:
     rows = cur.fetchall()
     for r in rows:
         idscan = r[0]
-    origen = open (file = origen_filename,mode='r', newline='', encoding="utf-8")
-    datos_origen = csv.reader(origen)
+    with open (file = origen_filename,mode='r', newline='', encoding="utf-8") as f:
+        datos_origen = csv.reader(f)
+        #Header
+        datos_origen.__next__()
 
-    #Header
-    datos_origen.__next__()
+        for row in datos_origen:
+            data = datos_reporte(row)
+            #Evita inactivos
+            if data.id > 0:
+                new_row = [
+                    data.id,
+                    data.position,
+                    data.name,
+                    data.alliance,
+                    data.power,
+                    data.powerH,
+                    data.kp,
+                    data.deaths,
+                    data.rss_assist,
+                    data.t4kills,
+                    data.t5kills,
+                    data.timestamp
+                ]
+                fecha = datetime.utcfromtimestamp(data.timestamp)
+                new_row[11] = fecha
+                new_row.insert(0,idscan)
+                print (f"Insertando jugador: {data.name}")
+                sql = """INSERT INTO 
+                        scandata 
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+                cur.execute(sql,new_row)
 
-    for row in datos_origen:
-        data = datos_reporte(row)
-        #Evita inactivos
-        if data.id > 0:
-            new_row = [
-                data.id,
-                data.position,
-                data.name,
-                data.alliance,
-                data.power,
-                data.powerH,
-                data.kp,
-                data.deaths,
-                data.rss_assist,
-                data.t4kills,
-                data.t5kills,
-                data.timestamp
-            ]
-            fecha = datetime.utcfromtimestamp(data.timestamp)
-            new_row[11] = fecha
-            new_row.insert(0,idscan)
-            print (f"Insertando jugador: {data.name}")
-            sql = """INSERT INTO 
-                    scandata 
-                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-            cur.execute(sql,new_row)
-
-    conn.commit()
-    conn.close()
+        conn.commit()
+        conn.close()
+    
     done = True
 except Exception as e:
     print (f"Error: {e}")
