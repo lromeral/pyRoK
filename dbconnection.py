@@ -44,7 +44,7 @@ def get_reino_from_filename(filename:str)->str:
 
 #origen_filename = '3135_20230912_185502_data.csv'
 
-origen_filename = './reporte_in/20230928_121432_3129.csv'
+origen_filename = './reporte_in/20231001_193825_3131.csv'
 
 filename = os.path.basename(origen_filename)
 filename = os.path.splitext(filename)[0]
