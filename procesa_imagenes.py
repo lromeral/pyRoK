@@ -14,7 +14,6 @@ filename_csv = f"{directorio_base}{directorio_analisis}/{directorio_analisis}.cs
 
 
 
-
 profile_sufix = "_profile.png"
 standing_sufix = "_standings.png"
 more_info_sufix = "_more_info.png"
@@ -41,11 +40,15 @@ def capture_region_from_file(img:Image, region)->Image:
     return img_data
 
 
-def get_numeric_data_from_image(img_path:str, region)->int:
+def get_numeric_data_from_image(img_path:str, region, prepare_image=True)->int:
     print (img_path)
     try:
         img = Image.open(img_path)
-        img2 = u.prepare_image(capture_region_from_file(img,region))
+        if (prepare_image): 
+            img2 = u.prepare_image(capture_region_from_file(img,region)) 
+        else:
+            img2= capture_region_from_file(img,region)
+        #img2 = capture_region_from_file(img,region)
         return u.datos_numericos (img2)  
     except FileNotFoundError:
         return -1
@@ -109,3 +112,7 @@ for posicion in range(posicion_ini,posicion_final+1):
     print (j)
     
     u.write_to_csv(data=j.getJugador(), fichero= filename_csv, header=c.CSV_HEADER)
+
+
+
+#print (get_numeric_data_from_image('./reporte_in/test/3131_11_profile.png', REGION_PROFILE_POWER, False))
