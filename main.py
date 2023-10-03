@@ -22,9 +22,13 @@ if __name__=='__main__':
     comienzo = datetime.utcnow()
     m.logger.info (comienzo)
     
+    server_ip = 'rok.foromtb.com'
+    server_port = 43306
+
+
     if m.start(): 
         if p.start(m.get_scan_folder(),'',i,f):
-            d.start('rok','rok#12345.','rok','192.168.10.112',3306,p.get_csv_path())
+            d.start('rok','rok#12345.','rok',server_ip,server_port,p.get_csv_path())
         else:
             u.salir("No finalizó correctamente el volcado de datos")  
     else:
