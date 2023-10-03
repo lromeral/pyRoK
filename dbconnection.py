@@ -36,7 +36,7 @@ class conn_bd:
 
 
 
-conn = conn_bd('rok','rok#12345.','192.168.10.112',3306,'rok').get_conn()
+conn = conn_bd('rok','rok#12345.','rok.foromtb.com',43306,'rok').get_conn()
 
 def get_reino_from_filename(filename:str)->str:
     result = filename[16:20]
@@ -44,7 +44,7 @@ def get_reino_from_filename(filename:str)->str:
 
 #origen_filename = '3135_20230912_185502_data.csv'
 
-origen_filename = './reporte_in/20231001_193825_3131.csv'
+origen_filename = './scans/20231003_214538_3131/20231003_214538_3131.csv'
 
 filename = os.path.basename(origen_filename)
 filename = os.path.splitext(filename)[0]

@@ -7,7 +7,7 @@ from jugador import jugador
 from datetime import datetime
 directorio_base = f"{c.SCANS_PATH}"
 
-directorio_analisis = '20231001_193825_3131'
+directorio_analisis = '20231003_214538_3131'
 dir_in = f"{directorio_base}{directorio_analisis}/{c.SCREENSHOTS_PATH}"
 kdname = directorio_analisis[16:20]
 filename_csv = f"{directorio_base}{directorio_analisis}/{directorio_analisis}.csv"
@@ -98,9 +98,9 @@ for posicion in range(posicion_ini,posicion_final+1):
     j.id = get_numeric_data_from_image(img_profile_path, REGION_PROFILE_GOV_ID)
     j.nombre= get_nombre_from_file(txt_file_path)
     j.alianza = get_alphanumeric_data_from_image(img_profile_path, REGION_PROFILE_ALLIANCE)
-    j.poderactual = get_numeric_data_from_image(img_profile_path, REGION_PROFILE_POWER)
+    j.poderactual = get_numeric_data_from_image(img_profile_path, REGION_PROFILE_POWER, False)
     j.podermasalto = get_numeric_data_from_image(img_more_info_path, REGION_MORE_INFO_POWERH)
-    j.kp = get_numeric_data_from_image(img_profile_path, REGION_PROFILE_KP)
+    j.kp = get_numeric_data_from_image(img_profile_path, REGION_PROFILE_KP, False)
     j.muertos=get_numeric_data_from_image(img_more_info_path, REGION_MORE_INFO_DEATHS)
     j.rss_assist = get_numeric_data_from_image(img_more_info_path, REGION_MORE_INFO_RSS_ASSIST)
 
