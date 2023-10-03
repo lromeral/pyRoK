@@ -15,8 +15,12 @@ class captura_screenshots():
         self.kdname = kdname
         self.logger = getmylogger(__name__)
         self.inactivo = False
-        kd_scan_folder = c.SCANS_PATH + "/"  + datetime.now().strftime('%Y%m%d_%H%M%S') + "_" + str(self.kdname) 
-        self.screenshot_scan_folder = kd_scan_folder +"/" + c.SCREENSHOTS_PATH
+        self.image_location = datetime.now().strftime('%Y%m%d_%H%M%S') + "_" + str(self.kdname) 
+        self.kd_scan_folder = c.SCANS_PATH + "/"  + self.image_location 
+        self.screenshot_scan_folder = self.kd_scan_folder +"/" + c.SCREENSHOTS_PATH
+
+    def get_scan_folder(self)->str:
+        return self.image_location
 
     def process_standings(self,position:tuple, num:int):            
         self.logger.debug (self.process_standings.__name__)
@@ -87,20 +91,23 @@ class captura_screenshots():
         u.capture_region(region).save(self.screenshot_scan_folder + filename)
 
     def start(self)->bool:
-        #Crea directorios si no existen
-        if (not os.path.isdir(self.screenshot_scan_folder)): os.makedirs (self.screenshot_scan_folder)
-        self.logger.debug (self.start.__name__)
-        self.logger.info (f"Procesando jugadores desde {self.inicio} hasta {self.final}")
-        posicion_anterior=c.STANDING_POS[0]
-        for x in range(self.inicio,self.final):
-            self.jugador = j.jugador (kd=self.kdname)
-            if self.inactivo:
-                indice_anterior = c.STANDING_POS.index(posicion_anterior)
-                posicion_siguiente = c.STANDING_POS[indice_anterior + 1] if indice_anterior <=6 else u.salir ("Error de indice de jugador al procesar inactivos")
-                self.inactivo =False
-            else:
-                posicion_siguiente = c.STANDING_POS[x] if x <=3 else c.STANDING_POS[4]
-            self.process_player(num=x , classf_position=posicion_siguiente)
-            posicion_anterior = posicion_siguiente
-        return True
+        try:
+            #Crea directorios si no existen
+            if (not os.path.isdir(self.screenshot_scan_folder)): os.makedirs (self.screenshot_scan_folder)
+            self.logger.debug (self.start.__name__)
+            self.logger.info (f"Procesando jugadores desde {self.inicio} hasta {self.final}")
+            posicion_anterior=c.STANDING_POS[0]
+            for x in range(self.inicio,self.final):
+                self.jugador = j.jugador (kd=self.kdname)
+                if self.inactivo:
+                    indice_anterior = c.STANDING_POS.index(posicion_anterior)
+                    posicion_siguiente = c.STANDING_POS[indice_anterior + 1] if indice_anterior <=6 else u.salir ("Error de indice de jugador al procesar inactivos")
+                    self.inactivo =False
+                else:
+                    posicion_siguiente = c.STANDING_POS[x] if x <=3 else c.STANDING_POS[4]
+                self.process_player(num=x , classf_position=posicion_siguiente)
+                posicion_anterior = posicion_siguiente
+            return True
+        except:
+            return False
     
