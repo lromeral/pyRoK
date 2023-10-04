@@ -75,6 +75,8 @@ class procesa_imagenes():
             return datetime.timestamp(datetime.utcnow())
 
     def start (self, dir_in:str, dir_out:str='', inicio:int=1, final:int=300)->bool:
+
+        
         try:
             kdname = dir_in[16:20]
             self.filename_csv = f"{c.SCANS_PATH}{dir_in}/{dir_in}.csv"
@@ -105,7 +107,7 @@ class procesa_imagenes():
 
                 j.timestamp = self.get_timestamp_from_file(txt_timestamp_path)
 
-                self.logger.debug(j)    
+                #self.logger.debug(fj)    
             
                 u.write_to_csv(data=j.getJugador(), fichero= self.filename_csv, header=c.CSV_HEADER)
                 return True

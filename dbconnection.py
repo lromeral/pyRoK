@@ -34,30 +34,25 @@ class conn_bd:
     def get_conn (self):
         return self.conn
 
-
-
-conn = conn_bd('rok','rok#12345.','rok.foromtb.com',43306,'rok').get_conn()
-
-def get_reino_from_filename(filename:str)->str:
-    result = filename[16:20]
-    return result
-
-#origen_filename = '3135_20230912_185502_data.csv'
-
-origen_filename = './scans/20231003_214538_3131/20231003_214538_3131.csv'
-
-filename = os.path.basename(origen_filename)
-filename = os.path.splitext(filename)[0]
-datetime_string = filename[:15]
-print (datetime_string)
-idscan = 0
-done = False
-try:
-    cur = conn.cursor()
-    kd = get_reino_from_filename(filename)
-    timestamp = datetime.strptime(datetime_string,'%Y%m%d_%H%M%S')
-    cur.execute("INSERT INTO scans (KD,scan_time) VALUES(?,?)", (kd,timestamp))
-    cur.execute("SELECT * from scans where kd =? and scan_time =?",(kd,timestamp))
+class vuelca_datos_db():
+    def __init__(self) -> None:
+        pass
+    def start(self, bd_username, bd_pass, bd_name, server_ip, server_port, csv_path):
+        #conn = conn_bd(bd_name,'rok#12345.','192.168.10.112',3306,'rok').get_conn()
+        conn = conn_bd(bd_username,bd_pass,server_ip,server_port,bd_name).get_conn()
+        origen_filename = csv_path
+        filename = os.path.basename(origen_filename)
+        filename = os.path.splitext(filename)[0]
+        datetime_string = filename[:15]
+        print (datetime_string)
+        idscan = 0
+        done = False
+        try:
+            cur = conn.cursor()
+            kd = self.get_reino_from_filename(filename)
+            timestamp = datetime.strptime(datetime_string,'%Y%m%d_%H%M%S')
+            cur.execute("INSERT INTO scans (KD,scan_time) VALUES(?,?)", (kd,timestamp))
+            cur.execute("SELECT * from scans where kd =? and scan_time =?",(kd,timestamp))
 
             rows = cur.fetchall()
             for r in rows:
@@ -110,5 +105,4 @@ try:
     def get_reino_from_filename(self,filename:str)->str:
         result = filename[16:20]
         return result
-
 
