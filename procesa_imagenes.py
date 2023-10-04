@@ -17,7 +17,9 @@ class procesa_imagenes():
     timestamp_sufix = "_timestamp.txt"
 
     ##REGIONS
-    REGION_PROFILE_GOV_ID = (550,120,700,155)
+
+    #REGION_PROFILE_GOV_ID = (550,120,700,155)
+    REGION_PROFILE_GOV_ID = (550,120,668,155)
     REGION_PROFILE_ALLIANCE = (400,250,640,290)
     REGION_PROFILE_POWER = (650,250,870,290)
     REGION_PROFILE_KP = (880,250,1140,290)
@@ -91,7 +93,7 @@ class procesa_imagenes():
 
                 j.kd = kdname
                 j.pos = posicion
-                j.id = self.get_numeric_data_from_image(img_profile_path, self.REGION_PROFILE_GOV_ID)
+                j.id = self.get_numeric_data_from_image(img_profile_path, self.REGION_PROFILE_GOV_ID, False)
                 j.nombre= self.get_nombre_from_file(txt_file_path)
                 j.alianza = self.get_alphanumeric_data_from_image(img_profile_path, self.REGION_PROFILE_ALLIANCE)
                 j.poderactual = self.get_numeric_data_from_image(img_profile_path, self.REGION_PROFILE_POWER)
@@ -100,8 +102,8 @@ class procesa_imagenes():
                 j.muertos=self.get_numeric_data_from_image(img_more_info_path, self.REGION_MORE_INFO_DEATHS)
                 j.rss_assist = self.get_numeric_data_from_image(img_more_info_path, self.REGION_MORE_INFO_RSS_ASSIST)
 
-                j.t4kills = self.get_numeric_data_from_image(img_kp_path, self.REGION_KP_T4)
-                j.t5kills = self.get_numeric_data_from_image(img_kp_path, self.REGION_KP_T5)
+                j.t4kills = self.get_numeric_data_from_image(img_kp_path, self.REGION_KP_T4, False)
+                j.t5kills = self.get_numeric_data_from_image(img_kp_path, self.REGION_KP_T5, False)
 
                 j.timestamp = self.get_timestamp_from_file(txt_timestamp_path)
 
@@ -115,4 +117,9 @@ class procesa_imagenes():
     def get_csv_path(self)->str:
         return self.filename_csv
 
+""" 
+p = procesa_imagenes()
+dir = '20231004_103756_3130'
 
+p.start (dir_in=dir, dir_out=None,inicio=1,final=300)
+ """

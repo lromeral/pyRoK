@@ -26,10 +26,9 @@ if __name__=='__main__':
     server_port = 43306
 
 
-    p.start (dir_in='20231004_080515_3129',dir_out=None,inicio=i,final=f)
-
-
-'''
+    #p.start (dir_in='20231004_080515_3129',dir_out=None,inicio=299,final=300)
+    #d.start('rok','rok#12345.','rok',server_ip,server_port,'./scans/20231004_080515_3129/20231004_080515_3129.csv')
+    
     if m.start(): 
         if p.start(m.get_scan_folder(),'',i,f):
             d.start('rok','rok#12345.','rok',server_ip,server_port,p.get_csv_path())
@@ -45,7 +44,3 @@ if __name__=='__main__':
     notify.send_message(f'Captura finalizada en: {tiempo_total}')
     m.logger.info (f"Tiempo transcurrido: {tiempo_total}")
     
-'''
-
-
-
