@@ -18,19 +18,6 @@ class procesa_imagenes():
 
     ##REGIONS
 
-    #REGION_PROFILE_GOV_ID = (550,120,700,155)
-    REGION_PROFILE_GOV_ID = (550,120,668,155)
-    REGION_PROFILE_ALLIANCE = (400,250,640,290)
-    REGION_PROFILE_POWER = (650,250,870,290)
-    REGION_PROFILE_KP = (880,250,1140,290)
-
-    REGION_MORE_INFO_POWER = (640,110,865,150)
-    REGION_MORE_INFO_POWERH = (800,230,1150,280)
-    REGION_MORE_INFO_DEATHS = (800,410,1150,460)
-    REGION_MORE_INFO_RSS_ASSIST = (800,630,1150,680)
-
-    REGION_KP_T4 = (651,370,900,405)
-    REGION_KP_T5 = (651,415,900,450)
 
     def __init__(self) -> None:
         pass
@@ -117,9 +104,8 @@ class procesa_imagenes():
     def get_csv_path(self)->str:
         return self.filename_csv
 
-""" 
-p = procesa_imagenes()
-dir = '20231004_103756_3130'
 
-p.start (dir_in=dir, dir_out=None,inicio=1,final=300)
- """
+p = procesa_imagenes()
+dir = '20231008_214958_3131'
+
+p.start (dir_in=dir, dir_out=None,inicio=188,final=300)

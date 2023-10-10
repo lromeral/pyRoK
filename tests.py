@@ -1,3 +1,2 @@
-import os
-
-origen_filename = './reporte_in/3134_20230927_204532.csv'
+filename = './scans//20231008_175434_3300/screenshots/3300_1_standings.png'
+print ("/".join((filename.split('/')[0:-1])))

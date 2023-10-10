@@ -108,6 +108,6 @@ class vuelca_datos_db():
 
 
 
-""" d = vuelca_datos_db()
-file_csv = './scans/20231004_103756_3130/20231004_103756_3130.csv'
-d.start ('rok','rok#12345.','rok','rok.foromtb.com',43306,file_csv) """
+# d = vuelca_datos_db()
+# file_csv = './scans/20231010_212120_3131/20231010_212120_3131.csv'
+# d.start ('rok','rok#12345.','rok','rok.foromtb.com',43306,file_csv) 

@@ -69,10 +69,7 @@ class captura_screenshots():
         u.click_on_location(c.CLICK_KILLS_STATS)
         nombre_archivo = f"{self.kdname}_{pos_in_standings}_kp.png"
         self.captura_pantalla(c.SCREENSHOT_MORE_INFO ,nombre_archivo)
-    def close_profile(self):
-        self.logger.debug (self.close_profile.__name__)
-        if (not u.check_screeen(c.REGION_WINDOW_GOV_PROFILE,c.TITLE_WINDOW_GOV_PROFILE)): u.salir ("No se encuentra la ventana perfil del gobernador al cerrarla")
-        u.click_on_location(c.CLICK_CLOSE_GOV_PROFILE)
+
         
     def process_player (self,num:int, classf_position:tuple):
         self.logger.debug (self.process_player.__name__)

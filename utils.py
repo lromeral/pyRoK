@@ -5,15 +5,14 @@ import csv
 import os
 import pytesseract
 from itertools import groupby
-from coords import coords
-from PIL import Image, ImageGrab, ImageEnhance
+from PIL import Image, ImageGrab
 from mylogger import getmylogger
 from jugador import jugador
 import cv2
 import numpy as np
 from telegram import telegram_notify
 from datetime import datetime
-    
+
 moverA = pa.moveTo
 obtener_posicion = pa.position
 pauto=pa
@@ -21,14 +20,28 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tess
 logger = getmylogger(__name__)
 notify = telegram_notify()
 
+def captura_pantalla (region,filename:str):
+    logger.debug (captura_pantalla.__name__)
+    logger.debug (f"Captura:{filename}")
+    
+    screenshot_folder = "/".join((filename.split('/')[0:-1]))
+    if not os.path.exists(screenshot_folder):
+        crearCarpeta (screenshot_folder)
+    capture_region(region).save(filename)
+
+def scroll (tiempo:float=110, hacia_abajo:bool=True):
+    logger.debug (scroll.__name__)
+    #pa.scroll(tiempo * (-1) if hacia_abajo else tiempo)
+    pa.scroll(clicks=tiempo * (-1) if hacia_abajo else tiempo)
+    time.sleep(tiempo/20)
+    print ("salgo del scroll")
+
 def click_on_location (loc:cfg._point)->bool:
     logger.debug (click_on_location.__name__)
     pa.moveTo(loc)
     click()
     time.sleep(0.3)
     return True   
-
-
 
 def all_equal(iterable):
     g = groupby(iterable)
@@ -45,7 +58,7 @@ def prepare_image (img_in:Image)->Image:
     img_out = cv2.threshold(img_out, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     return img_out
 
-def check_screeen (region_in,titulo:str)->bool:
+def check_screeen (region_in,titulo:str):
     logger.debug(check_screeen.__name__)
     logger.debug(f"check_screen buscando:{titulo}")
     retry = 0
@@ -58,12 +71,10 @@ def check_screeen (region_in,titulo:str)->bool:
             if retry < retry_max:
                 logger.warning(f"Reintenado check_screen {retry}")
                 retry+=1
-                time.sleep(retry)
+                time.sleep(3 + retry)
             else:
                 logger.error(f"check_screen no encontrada:{titulo}")
                 return False
-
-
 
 def screenshot (strPath:str)->Image:
     logger.debug (screenshot.__name__)
@@ -76,9 +87,8 @@ def guardar_imagen (img:Image, path:str, nombre:str)->bool:
     if not os.path.exists(path): crearCarpeta (path)
     img.save (path + "/" + nombre)
 
-def click (time_pressed:float=0.2)->None:
+def click (time_pressed:float=0.3)->None:
     logger.debug (click.__name__)
-    time.sleep(0.3)
     pa.click(duration=time_pressed)
     time.sleep(0.3)
 
@@ -86,7 +96,7 @@ def crearCarpeta(path:str):
     logger.debug (crearCarpeta.__name__)
     logger.info  ("Creando carpeta en: " + path)
     try:
-        os.mkdir(path)
+        os.makedirs(path,exist_ok=True)
     except:
         logger.critical ("No se pudo crear el directorio " +  path)
         salir("No se pudo crear el directorio")
@@ -107,8 +117,12 @@ def write_to_csv(data:list, fichero, header:list):
 
 #Devuelve los datos obtenidos sobre la alizanza
 def datos_alfanumericos(img:Image)->str:
+
+    #cv2.imshow("Datos Alfanumericos",img)
+    #cv2.waitKey(0)
     logger.debug (datos_alfanumericos.__name__)
     datos = pytesseract.image_to_string(img, config=cfg.TESSERACT['ALPHANUMERIC']).strip()
+    logger.debug(f"Datos obtenidos: {datos}")
     #return datos if len(datos) > 3 else "#error#"
     return datos
 
