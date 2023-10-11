@@ -124,13 +124,13 @@ class capture_data:
     def process_player (self,num:int):
         self.logger.debug (self.process_player.__name__)
         self.logger.info(f"Procesando jugador{num}")
-        self.process_standings(num)
-        self.process_profile(num)
-        self.process_more_info(num)
-        self.close_profile()
+        if (self.process_standings(num)):
+            self.process_profile(num)
+            self.process_more_info(num)
+            self.close_profile()
 
     ################# 01 STANDINGS ####################
-    def process_standings(self,num:int):            
+    def process_standings(self,num:int)->bool:            
         self.logger.debug (self.process_standings.__name__)
         if (not u.check_screeen(cfg.REGION_WINDOW_POWER_STANDINGS,cfg.TITLE_WINDOW_POWER_STANDINGS)):
             u.salir ( "process_standings: No se encuentra pantalla de clasificaciones generales")
@@ -138,6 +138,9 @@ class capture_data:
         nombre_archivo = f"{self.screenshot_scan_folder}/{self.kdname}_{num}_standings.png"
         u.captura_pantalla(cfg.SCREENSHOT_STANDINGS,nombre_archivo)
         u.click_on_location(position)
+        #Gestion de Inactivos
+        return (u.check_screeen(cfg.REGION_WINDOW_GOV_PROFILE,cfg.TITLE_WINDOW_GOV_PROFILE))
+            
 
     ################# 02 PROFILE ####################  
     def process_profile(self, pos_in_standings:int):
