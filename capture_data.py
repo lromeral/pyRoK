@@ -211,5 +211,5 @@ class capture_data:
 
 
 
-c = capture_data('3131_test',30,40)
-c.start()
+# c = capture_data('3131_test',30,40)
+# c.start()
