@@ -64,6 +64,7 @@ def check_screen_by_icon (icon_path:str)->bool:
     return True if (pa.locateOnScreen(image=icon_path, grayscale=False ,confidence=0.9)!=None) else False 
 
 
+
 def check_screeen_by_title (region_in,titulo:str, retries=1):
     logger.debug(check_screeen_by_title.__name__)
     logger.debug(f"check_screen buscando:{titulo}")
@@ -234,9 +235,5 @@ def mover_raton_centro_pantalla ():
 def teclado_ESC ():
     pa.hotkey('esc')
 
-#time.sleep(2)
+time.sleep(2)
 #loc = pa.locateCenterOnScreen(image='./images/icon/icon_map.png', grayscale=False ,confidence=0.9)
-
-
-#print (check_screen_by_icon('./images/icon/icon_home.png'))
- 

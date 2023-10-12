@@ -30,7 +30,7 @@ class capture_data:
         return self.image_location
 
     def get_location_position(self,position:int)->tuple:
-        assert (utils.check_screeen_by_title(cfg.REGION_WINDOW_POWER_STANDINGS,cfg.TITLE_WINDOW_POWER_STANDINGS)), "get_location_position No se encuentra pantalla"
+        assert (utils.check_screeen_by_title(cfg.REGION_WINDOW_POWER_STANDINGS,cfg.TitulosPantallas.POWER_STANDINGS.value)), "get_location_position No se encuentra pantalla"
         #TODO: INVESTIGAR COMO BUSCAR LOS TRES PRIMEROS
         if position < 4:
             return cfg.STANDING_POS[position]
@@ -134,20 +134,21 @@ class capture_data:
     ################# 01 STANDINGS ####################
     def process_standings(self,num:int)->bool:            
         self.logger.debug (self.process_standings.__name__)
-        navegacion.menu_gobernador_clasificaciones_poder_individual()
+        navegacion.ir_perfil_gobernador_clasificaciones_poder_individual()
         position = self.get_location_position(num)
         nombre_archivo = f"{self.screenshot_scan_folder}/{self.kdname}_{num}_standings.png"
         utils.captura_pantalla(cfg.SCREENSHOT_STANDINGS,nombre_archivo)
         utils.click_on_location(position)
         #Gestion de Inactivos
-        return (utils.check_screeen_by_title(cfg.REGION_WINDOW_GOV_PROFILE,cfg.TITLE_WINDOW_GOV_PROFILE))
+        return (utils.check_screeen_by_title(cfg.REGION_WINDOW_GOV_PROFILE,cfg.TitulosPantallas.GOV_PROFILE.value))
             
 
     ################# 02 PROFILE ####################  
     def process_profile(self, pos_in_standings:int):
         self.logger.debug (self.process_profile.__name__)
         self.logger.debug (f"process_profile: {pos_in_standings}")
-        if (not utils.check_screeen_by_title(cfg.REGION_WINDOW_GOV_PROFILE,cfg.TITLE_WINDOW_GOV_PROFILE)):
+        if (not utils.check_screeen_by_title(cfg.REGION_WINDOW_GOV_PROFILE,cfg.TitulosPantallas.GOV_PROFILE.value)):
+            raise WindowNotFound("No se encuentra la ventana perfil del gobernador")
             utils.salir("process_profile: No se encuentra la ventana perfil del gobernador")
         nombre_archivo = f"{self.screenshot_scan_folder }/{self.kdname}_{pos_in_standings}_timestamp.txt"
         with open(nombre_archivo, 'w',encoding="utf-8") as f:
@@ -161,7 +162,7 @@ class capture_data:
 
     def close_profile(self):
         self.logger.debug (self.close_profile.__name__)
-        if (not utils.check_screeen_by_title (cfg.REGION_WINDOW_GOV_PROFILE,cfg.TITLE_WINDOW_GOV_PROFILE)): 
+        if (not utils.check_screeen_by_title (cfg.REGION_WINDOW_GOV_PROFILE,cfg.TitulosPantallas.GOV_PROFILE.value)): 
             raise WindowNotFound("No se encuentra la ventana perfil del gobernador")
         utils.click_on_location(cfg.CLICK_CLOSE_GOV_PROFILE)
         time.sleep(0.5)
@@ -171,7 +172,8 @@ class capture_data:
         self.logger.debug (self.process_more_info.__name__)
         utils.click_on_location(cfg.CLICK_MORE_INFO)
         nombre_archivo = f"{self.screenshot_scan_folder}/{self.kdname}_{pos_in_standings}_more_info.png"
-        if (not utils.check_screeen_by_title(cfg.REGION_WINDOW_MORE_INFO,cfg.TITLE_WINDOW_MORE_INFO)):
+        if (not utils.check_screeen_by_title(cfg.REGION_WINDOW_MORE_INFO,cfg.TitulosPantallas.MORE_INFO.value)):
+            raise WindowNotFound("No se encuentra la ventana mas informacionr")
             utils.salir ("process_more_info: No se encuentra la ventana mas informacion")
         utils.captura_pantalla(cfg.SCREENSHOT_MORE_INFO, nombre_archivo)
         utils.click_on_location (cfg.CLICK_COPY_NAME)
@@ -184,7 +186,7 @@ class capture_data:
 
     def _process_kp_stats (self, pos_in_standings:int):
         self.logger.debug (self._process_kp_stats.__name__)
-        if (not utils.check_screeen_by_title(cfg.REGION_WINDOW_MORE_INFO,cfg.TITLE_WINDOW_MORE_INFO)): 
+        if (not utils.check_screeen_by_title(cfg.REGION_WINDOW_MORE_INFO,cfg.TitulosPantallas.MORE_INFO.value)): 
             raise WindowNotFound("_process_kp_stats: No se encuentra la ventana mas informacion")
         utils.click_on_location(cfg.CLICK_KILLS_STATS)
         nombre_archivo = f"{self.screenshot_scan_folder}/{self.kdname}_{pos_in_standings}_kp.png"
@@ -194,22 +196,23 @@ class capture_data:
 
     ################# START CAPTURING ####################  
     def start(self)->bool:
-        try:
-            #Crea directorios si no existen
-            if (not os.path.isdir(self.screenshot_scan_folder)): os.makedirs (self.screenshot_scan_folder)
-            self.logger.debug (self.start.__name__)
-            self.logger.info (f"Procesando jugadores desde {self.inicio} hasta {self.final}")
-            for self.procesando in range(self.inicio,self.final):
-                self.jugador = j.jugador (kd=self.kdname)
-                self.process_player(self.procesando)
-            return True
-        except Exception as e:
-            print (f"Excepcion en capture:  {e}")
-            print (f'Screenshotfolder: {self.screenshot_scan_folder}')
-            print (f'procesando: {self.procesando}')
-            self.start()
-
-
+        #Crea directorios si no existen
+        if (not os.path.isdir(self.screenshot_scan_folder)): os.makedirs (self.screenshot_scan_folder)
+        self.logger.debug (self.start.__name__)
+        self.logger.info (f"Procesando jugadores desde {self.inicio} hasta {self.final}")
+        for self.procesando in range(self.inicio,self.final):
+            self.logger.info (f"Procesando jugador: {self.procesando}")
+            while True:
+                try:
+                    self.jugador = j.jugador (kd=self.kdname)
+                    self.process_player(self.procesando)
+                except Exception as e:
+                    print (f"Excepcion en capture:  {e}")
+                    print (f'Screenshotfolder: {self.screenshot_scan_folder}')
+                    print (f'procesando: {self.procesando}')
+                    continue
+                break
+        return True
 
 # c = capture_data('3131_test',30,40)
 # c.start()

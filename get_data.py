@@ -267,8 +267,10 @@ class get_data:
     def start (self, dir_in:str, dir_out:str='', inicio:int=1, final:int=300)->bool:
             try:
                 kdname = dir_in[16:20]
-                self.filename_csv = f"{cfg.SCANS_PATH}{dir_in}/{dir_in}.csv"
-                screeshots_location = f"{cfg.SCANS_PATH}{dir_in}/{cfg.SCREENSHOTS_PATH}"
+                self.filename_csv = f"{cfg.SCANS_PATH}/{dir_in}/{dir_in}.csv"
+                screeshots_location = f"{cfg.SCANS_PATH}/{dir_in}/{cfg.SCREENSHOTS_PATH}"
+
+                #print (screeshots_location)
 
                 for posicion in range(inicio,final):
                     j = jugador.jugador()
@@ -278,6 +280,9 @@ class get_data:
                     img_kp_path = f"{screeshots_location}/{kdname}_{posicion}{cfg.KP_FILE_SUFIX}" 
                     txt_file_path = f"{screeshots_location}/{kdname}_{posicion}{cfg.NAME_FILE_SUFIX}" 
                     txt_timestamp_path =f"{screeshots_location}/{kdname}_{posicion}{cfg.TIMESTAMP_FILE_SUFIX}" 
+
+
+                    #print (img_profile_path)
 
                     if (utils.checkPath(img_profile_path) and utils.checkPath(img_more_info_path)):
                         j.kd = kdname
@@ -306,7 +311,7 @@ class get_data:
                 return False
 
 #g = get_data()
-#dir = '20231012_121900_3153'
+#dir = '20231012_202222_3131_test'
 # img_profile = './scans/20231008_214958_3131/screenshots/3131_200_profile.png'
 # img_kp = './scans/20231008_214958_3131/screenshots/3131_200_kp.png'
 # img_moreinfo = './scans/20231008_214958_3131/screenshots/3131_200_more_info.png'
@@ -321,4 +326,4 @@ class get_data:
 # print (f"RSS: {g.rss_assist(img_moreinfo)}")
 # print (f"T4: {g.t4k(img_kp)}")
 # print (f"T5: {g.t5k(img_kp)}")
-#g.start (dir_in=dir, dir_out=None,inicio=300,final=301)
+#g.start (dir_in=dir, dir_out=None,inicio=30,final=301)

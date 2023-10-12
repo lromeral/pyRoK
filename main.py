@@ -28,7 +28,8 @@ if __name__=='__main__':
     #exit(-1)
     if m.start():
         if g.start(m.get_scan_folder(),'',i,f):
-            d.start('rok','rok#12345.','rok',server_ip,server_port,g.get_csv_path())
+            #d.start('rok','rok#12345.','rok',server_ip,server_port,g.get_csv_path())
+            pass
         else:
             u.salir("No finalizó correctamente el volcado de datos")  
     else:
