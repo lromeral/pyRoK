@@ -64,11 +64,11 @@ def check_screen_by_icon (icon_path:str)->bool:
     return True if (pa.locateOnScreen(image=icon_path, grayscale=False ,confidence=0.9)!=None) else False 
 
 
-def check_screeen_by_title (region_in,titulo:str):
+def check_screeen_by_title (region_in,titulo:str, retries=1):
     logger.debug(check_screeen_by_title.__name__)
     logger.debug(f"check_screen buscando:{titulo}")
     retry = 0
-    retry_max = 5
+    retry_max = retries
     while True:
         if datos_alfanumericos(capture_region(region_in,True)) == titulo: 
             logger.debug(f"check_screen encontrada:{titulo}")
