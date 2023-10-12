@@ -3,9 +3,9 @@ import numpy as np
 import pytesseract
 import cfg
 import jugador
-import utils
 import datetime
 import mylogger
+import utils
 
 class get_data:
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -279,25 +279,26 @@ class get_data:
                     txt_file_path = f"{screeshots_location}/{kdname}_{posicion}{cfg.NAME_FILE_SUFIX}" 
                     txt_timestamp_path =f"{screeshots_location}/{kdname}_{posicion}{cfg.TIMESTAMP_FILE_SUFIX}" 
 
-                    j.kd = kdname
-                    j.pos = posicion
-                    j.id = self.id(img_profile_path)
-                    j.nombre= self.get_nombre_from_file(txt_file_path)
-                    j.alianza = self.alliance(img_profile_path)
-                    j.poderactual = self.power(img_profile_path)
-                    j.podermasalto = self.powerh(img_more_info_path)
-                    j.kp = self.kp(img_profile_path)
-                    j.muertos=self.deads(img_more_info_path)
-                    j.rss_assist = self.rss_assist(img_more_info_path)
+                    if (utils.checkPath(img_profile_path) and utils.checkPath(img_more_info_path)):
+                        j.kd = kdname
+                        j.pos = posicion
+                        j.id = self.id(img_profile_path)
+                        j.nombre= self.get_nombre_from_file(txt_file_path)
+                        j.alianza = self.alliance(img_profile_path)
+                        j.poderactual = self.power(img_profile_path)
+                        j.podermasalto = self.powerh(img_more_info_path)
+                        j.kp = self.kp(img_profile_path)
+                        j.muertos=self.deads(img_more_info_path)
+                        j.rss_assist = self.rss_assist(img_more_info_path)
 
-                    j.t4kills = self.t4k(img_kp_path)
-                    j.t5kills = self.t5k(img_kp_path)
+                        j.t4kills = self.t4k(img_kp_path)
+                        j.t5kills = self.t5k(img_kp_path)
 
-                    j.timestamp = self.get_timestamp_from_file(txt_timestamp_path)
+                        j.timestamp = self.get_timestamp_from_file(txt_timestamp_path)
 
-                    self.logger.debug(j)    
-                
-                    utils.write_to_csv(data=j.getJugador(), fichero= self.filename_csv, header=cfg.CSV_HEADER)
+                        self.logger.debug(j)    
+                    
+                        utils.write_to_csv(data=j.getJugador(), fichero= self.filename_csv, header=cfg.CSV_HEADER)
                 return True
             except Exception as e:
                 print ("Exception")
@@ -305,7 +306,7 @@ class get_data:
                 return False
 
 #g = get_data()
-#dir = '20231010_212120_3131'
+#dir = '20231012_121900_3153'
 # img_profile = './scans/20231008_214958_3131/screenshots/3131_200_profile.png'
 # img_kp = './scans/20231008_214958_3131/screenshots/3131_200_kp.png'
 # img_moreinfo = './scans/20231008_214958_3131/screenshots/3131_200_more_info.png'
@@ -320,4 +321,4 @@ class get_data:
 # print (f"RSS: {g.rss_assist(img_moreinfo)}")
 # print (f"T4: {g.t4k(img_kp)}")
 # print (f"T5: {g.t5k(img_kp)}")
-#g.start (dir_in=dir, dir_out=None,inicio=1,final=300)
+#g.start (dir_in=dir, dir_out=None,inicio=300,final=301)

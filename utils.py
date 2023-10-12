@@ -32,6 +32,7 @@ def captura_pantalla (region,filename:str):
 def scroll (tiempo:float=110, hacia_abajo:bool=True):
     logger.debug (scroll.__name__)
     #pa.scroll(tiempo * (-1) if hacia_abajo else tiempo)
+    mover_raton_centro_pantalla()
     pa.scroll(clicks=tiempo * (-1) if hacia_abajo else tiempo)
     time.sleep(tiempo/20)
     print ("salgo del scroll")
@@ -58,8 +59,13 @@ def prepare_image (img_in:Image)->Image:
     img_out = cv2.threshold(img_out, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     return img_out
 
-def check_screeen (region_in,titulo:str):
-    logger.debug(check_screeen.__name__)
+def check_screen_by_icon (icon_path:str)->bool:
+    time.sleep(1)
+    return True if (pa.locateOnScreen(image=icon_path, grayscale=False ,confidence=0.9)!=None) else False 
+
+
+def check_screeen_by_title (region_in,titulo:str):
+    logger.debug(check_screeen_by_title.__name__)
     logger.debug(f"check_screen buscando:{titulo}")
     retry = 0
     retry_max = 5
@@ -179,7 +185,7 @@ def get_dato_numerico(region, count:int, data:jugador, capturar:bool=False)->int
     datos_recogidos = list([])
     while True:
         for x in range (0,count):
-            captura:Image = capturar_region(region=region).convert('L')
+            captura:Image = capture_region(region=region).convert('L')
             #captura.show()
             #input()
             #guardar_imagen(captura, cfg.paths['screenshots'] + str(data.kd), str(data.pos) + "_" + str(data.timestamp)  + ".png")
@@ -218,3 +224,19 @@ def capture_cv(loc):
     cv2.imshow("hola",norm_img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+def checkPath (filepath:str)->bool:
+    return os.path.exists(filepath)
+
+def mover_raton_centro_pantalla ():
+    pa.moveTo(cfg.POINT_CENTRO_PANTALLA)
+
+def teclado_ESC ():
+    pa.hotkey('esc')
+
+#time.sleep(2)
+#loc = pa.locateCenterOnScreen(image='./images/icon/icon_map.png', grayscale=False ,confidence=0.9)
+
+
+#print (check_screen_by_icon('./images/icon/icon_home.png'))
+ 
