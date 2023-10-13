@@ -272,7 +272,7 @@ class get_data:
 
                 #print (screeshots_location)
 
-                for posicion in range(inicio,final):
+                for posicion in range(inicio,final+1):
                     j = jugador.jugador()
 
                     img_profile_path = f"{screeshots_location}/{kdname}_{posicion}{cfg.PROFILE_FILE_SUFIX}" 
