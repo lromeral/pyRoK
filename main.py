@@ -38,6 +38,6 @@ if __name__=='__main__':
     m.logger.info (final)
     tiempo_total = final - comienzo
     notify = telegram_notify()
-    #notify.send_message(f'Captura finalizada en: {tiempo_total}')
+    notify.send_message(f'Captura finalizada en: {tiempo_total}')
     m.logger.info (f"Tiempo transcurrido: {tiempo_total}")
     
