@@ -9,8 +9,8 @@ import navegacion
 
 if __name__=='__main__':
     notify = telegram_notify()
-    kd_inicio = input("Nombre del Reino de Inicio: ")
-    kd_final = input("Nombre del Reino de Final: ")
+    kd_inicio = int(input("Nombre del Reino de Inicio: "))
+    kd_final = int(input("Nombre del Reino de Final: "))
     posicion_inicial = 1
     posicion_final = 300
 
