@@ -9,14 +9,15 @@ import navegacion
 
 if __name__=='__main__':
     notify = telegram_notify()
-    
-    for reino in range (3129,3134):
-        #kd = input("Nombre del Reino: ")
-        #i = int (input("Inicio: "))
-        #f = int(input('Final: ')) +1
+    kd_inicio = input("Nombre del Reino de Inicio: ")
+    kd_final = input("Nombre del Reino de Final: ")
+    posicion_inicial = 1
+    posicion_final = 300
+
+    for reino in range (kd_inicio,kd_inicio + 1):
         kd = reino
-        i = 1
-        f = 10
+        i = posicion_inicial
+        f = posicion_final +1
         
         comienzo = datetime.utcnow()
         m.logger.info (comienzo)
