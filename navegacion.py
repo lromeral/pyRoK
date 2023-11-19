@@ -28,11 +28,13 @@ def is_perfil_gobernador_configuracion_personajes()->bool:
 def is_perfil_gobernador_configuracion_personajes_inicio()->bool:
      return utils.check_screeen_by_title(cfg.TITULOS_LOCALIZACION.INICIO_PERSONAJES.value, cfg.TitulosPantallas.INICIO_SESION_PERSONAJE.value, retries=1)
 
-
 def ir_inicio():
-    while not (is_inicio() or is_mapa()):
+    while not (is_inicio() or is_mapa()):       
+        print ("ni inicio ni mapa") 
         utils.teclado_ESC()
+        utils.click()
     if (is_mapa()):
+        print ("ir_inicio->es_mapa")
         utils.click_on_location(cfg.CLICK_HOME_MAP) 
 
 
@@ -162,11 +164,19 @@ def abrir_reino (reino:int):
     utils.click_on_location(posicion)
     if is_perfil_gobernador_configuracion_personajes_inicio():
         utils.click_on_location(cfg.CLICK_PROFILE_MENU_CONFIGURACION_PERSONAJES_INICIO)
+        time.sleep(5)
     while True:
         print ("esperando")
+        #Puede ser el inicio o que este ya en el reino que se necesita
         if (is_inicio() or is_mapa()):
-            print ("Encontrado")
+            print ("Inicio o Mapa")
+            break
+        elif (is_perfil_gobernador_configuracion_personajes()):
+            print ("Ya esta en el")
+            ir_inicio()
             break
         else:
             print ("timer")
-            time.sleep(5)
+            time.sleep(30)
+            ir_inicio()
+            #utils.click()

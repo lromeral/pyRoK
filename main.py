@@ -1,6 +1,6 @@
 import time
 from datetime import datetime
-import utils as u
+import utils
 import get_data
 import capture_data
 from telegram import telegram_notify
@@ -11,6 +11,23 @@ if __name__=='__main__':
     notify = telegram_notify()
     kd_inicio = int(input("Nombre del Reino de Inicio: "))
     kd_final = int(input("Nombre del Reino de Final: "))
+    hora_inicio = int(input("Hora de inicio (-1 para empezar ahora): "))
+    minuto_inicio = int(input("Minuto de inicio (0..59): "))
+
+    if (hora_inicio>23): hora_inicio = 0
+    if (minuto_inicio>59): minuto_inicio=0
+
+
+    if (hora_inicio != -1):
+        while (True):
+            tiempo_actual = datetime.now()
+            if (tiempo_actual.hour == hora_inicio and tiempo_actual.minute==minuto_inicio):
+                break
+            else:
+                print ("Esperando a la hora programada.")
+                print (tiempo_actual)
+                time.sleep(15)
+
     posicion_inicial = 1
     posicion_final = 300
 
@@ -20,7 +37,7 @@ if __name__=='__main__':
         f = posicion_final +1
         
         comienzo = datetime.utcnow()
-        m.logger.info (comienzo)
+        utils.logger.info (comienzo)
         notify.send_message(f'[{reino}] comienza: {comienzo}')
         
         time.sleep(5)
@@ -46,10 +63,10 @@ if __name__=='__main__':
                 pass
             else:
                 notify.send_message(f'[{reino}] error en el volcado de datos')
-                u.salir("No finalizó correctamente el volcado de datos")  
+                utils.salir("No finalizó correctamente el volcado de datos")  
         else:
             notify.send_message(f'[{reino}] error en la captura de pantallas')
-            u.salir("No finalizó correctamente la captura de pantallas")   
+            utils.salir("No finalizó correctamente la captura de pantallas")   
         final = datetime.utcnow()
         m.logger.info (final)
         tiempo_total = final - comienzo
