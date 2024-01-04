@@ -21,6 +21,7 @@ logger = getmylogger(__name__)
 notify = telegram_notify()
 
 def captura_pantalla (region,filename:str):
+    time.sleep(1)
     logger.debug (captura_pantalla.__name__)
     logger.debug (f"Captura:{filename}")
     

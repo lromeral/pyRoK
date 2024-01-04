@@ -12,14 +12,12 @@ if __name__=='__main__':
     kd_inicio = int(input("Nombre del Reino de Inicio: "))
     kd_final = int(input("Nombre del Reino de Final: "))
     hora_inicio = int(input("Hora de inicio (-1 para empezar ahora): "))
-    minuto_inicio = int(input("Minuto de inicio (0..59): "))
-    infinito = int(input("Bucle infinito?(1=si, 0=solo una vez): "))
-
+    infinito = 0
+    if hora_inicio != -1:
+        minuto_inicio = int(input("Minuto de inicio (0..59): "))
+        infinito = int(input("Bucle infinito?(1=si, 0=solo una vez): "))
+        if (minuto_inicio>59): minuto_inicio=0
     if (hora_inicio>23): hora_inicio = 0
-    if (minuto_inicio>59): minuto_inicio=0
-
-
-
 
     while (True):
         if (hora_inicio != -1):

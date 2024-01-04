@@ -32,7 +32,7 @@ def ir_inicio():
     while not (is_inicio() or is_mapa()):       
         print ("ni inicio ni mapa") 
         utils.teclado_ESC()
-        utils.click()
+        #utils.click()
     if (is_mapa()):
         print ("ir_inicio->es_mapa")
         utils.click_on_location(cfg.CLICK_HOME_MAP) 
@@ -150,7 +150,7 @@ def buscar_reino(numero_reino:int)->bool:
 
     direccion = True #Siempre hacia abajo
 
-    DESPLAZAMIENTO_SCROLL = 110
+    DESPLAZAMIENTO_SCROLL = 10
     utils.scroll(DESPLAZAMIENTO_SCROLL,direccion)
     print ("despues del scroll")
     #Vuelta a buscar

@@ -310,8 +310,8 @@ class get_data:
                 print (e)
                 return False
 
-#g = get_data()
-#dir = '20231012_202222_3131_test'
+# g = get_data()
+# dir = '20231125_162618_3131'
 # img_profile = './scans/20231008_214958_3131/screenshots/3131_200_profile.png'
 # img_kp = './scans/20231008_214958_3131/screenshots/3131_200_kp.png'
 # img_moreinfo = './scans/20231008_214958_3131/screenshots/3131_200_more_info.png'
@@ -326,4 +326,4 @@ class get_data:
 # print (f"RSS: {g.rss_assist(img_moreinfo)}")
 # print (f"T4: {g.t4k(img_kp)}")
 # print (f"T5: {g.t5k(img_kp)}")
-#g.start (dir_in=dir, dir_out=None,inicio=30,final=301)
+# g.start (dir_in=dir, dir_out=None,inicio=299,final=301)

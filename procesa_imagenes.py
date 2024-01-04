@@ -106,6 +106,5 @@ class procesa_imagenes():
 
 
 p = procesa_imagenes()
-dir = '20231008_214958_3131'
-
-p.start (dir_in=dir, dir_out=None,inicio=188,final=300)
+dir = '20231125_201508_3131'
+p.start (dir_in=dir, dir_out="./test_hoy.csv",inicio=27,final=300)

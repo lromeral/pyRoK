@@ -82,6 +82,7 @@ class captura_screenshots():
         self.close_profile()
 
     def captura_pantalla (self,region,filename):
+        time.sleep(1)
         self.logger.debug (self.captura_pantalla.__name__)
         self.logger.debug (f"Captura:{filename}")
         time.sleep(0.5)
